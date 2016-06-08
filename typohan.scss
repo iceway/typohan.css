@@ -6,7 +6,7 @@ $font-mono: "Source Code Pro", monospace;
 
 $bg: #f8f8f8;
 $bg-code: #f0f0f0;
-$fg: #000000;
+$fg: #333333;
 $fg-light: #5c5c5c;
 
 /* 定义全局背景色和前景色；防止浏览器默认的字符缩放 */
@@ -106,6 +106,7 @@ i {
 
 strong, b {
 	font-weight: bold;
+	color: inherit;
 }
 
 /* 属性添加鼠标问号 */
