@@ -274,7 +274,6 @@ kbd {
 	color: lighten($fg, 20%);
 	background-color:darken($bg-code, 10%);
 	border:1px solid #ccc;
-	display:inline-block;
 	font-family:$font-mono;
 	font-size: 80%;
 	line-height:1.4;

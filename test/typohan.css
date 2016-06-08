@@ -253,7 +253,6 @@ kbd {
   color: #666666;
   background-color: #d7d7d7;
   border: 1px solid #ccc;
-  display: inline-block;
   font-family: "Source Code Pro", monospace;
   font-size: 80%;
   line-height: 1.4;
