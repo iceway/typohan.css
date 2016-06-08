@@ -53,6 +53,7 @@ table th, table td, table caption {
   border: 1px solid #e6e6e6;
   padding: 0.5em 1em;
   text-align: left;
+  color: inherit;
 }
 table th {
   font-weight: bold;
