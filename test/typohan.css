@@ -50,7 +50,7 @@ table {
   font-size: 0.9em;
 }
 table th, table td, table caption {
-  border: 1px solid #b3b3b3;
+  border: 1px solid #e6e6e6;
   padding: 0.5em 1em;
   text-align: left;
 }
@@ -94,6 +94,7 @@ i {
 
 strong, b {
   font-weight: bold;
+  color: inherit;
 }
 
 /* 属性添加鼠标问号 */
@@ -138,8 +139,8 @@ a {
   border-bottom: 1px solid gainsboro;
 }
 a:hover {
-  color: #000000;
-  border-bottom-color: #000000;
+  color: #333333;
+  border-bottom-color: #333333;
 }
 
 /* 地址，变量等使用等宽字体 */
@@ -160,7 +161,7 @@ code {
 
 pre {
   background: #f0f0f0;
-  border: 1px solid gray;
+  border: 1px solid #b3b3b3;
   border-radius: 5px;
   padding: 1em 2em;
   display: block;
@@ -178,7 +179,7 @@ pre code {
 
 /* 标题 */
 h1, h2, h3, h4, h5, h6 {
-  color: #000000;
+  color: #333333;
   font-weight: bold;
   line-height: 1.35;
   margin: 1.5em 0 0.5em 0;
@@ -248,7 +249,7 @@ kbd {
   -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4), 0 0 0 2px #fff inset;
   border-radius: 3px;
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4), 0 0 0 2px #fff inset;
-  color: #333333;
+  color: #666666;
   background-color: #d7d7d7;
   border: 1px solid #ccc;
   display: inline-block;
