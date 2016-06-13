@@ -206,6 +206,7 @@ ul, ol {
   -webkit-margin-after: 0;
   -webkit-padding-start: 0;
   padding-left: 2em;
+  margin-bottom: 2em;
 }
 ul.none-list, ol.none-list {
   list-style: none;
