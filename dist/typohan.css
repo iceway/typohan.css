@@ -13,7 +13,7 @@ html {
   font-size-adjust: 100%;
 }
 body {
-  margin: 2em auto;
+  margin: 2em 4em;
 }
 /* 标题 */
 h1,
@@ -90,6 +90,9 @@ p {
 p.poem-like {
   text-indent: 0;
   margin-left: 2em;
+}
+.no-indent p {
+  text-indent: 0;
 }
 /* 列表 */
 ul,
@@ -260,7 +263,7 @@ pre {
   border: 1px solid #5c5c5c;
   border-radius: 5px;
   display: block;
-  line-height: 1em;
+  line-height: 1.2em;
   overflow-x: auto;
   word-wrap: normal;
   white-space: pre;
