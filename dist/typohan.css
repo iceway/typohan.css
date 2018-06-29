@@ -13,7 +13,8 @@ html {
   font-size-adjust: 100%;
 }
 body {
-  margin: 2em 4em;
+  margin: 2em auto 4em auto;
+  max-width: 1024px;
 }
 /* 标题 */
 h1,
