@@ -46,6 +46,17 @@ h5 {
 h6 {
   font-size: 1em;
 }
+body.html2pdf h1 {
+  padding-top: 10em;
+  text-align: center;
+}
+body.html2pdf h1 + p {
+  text-align: center;
+  font-weight: bold;
+}
+body.html2pdf h2 {
+  page-break-before: always;
+}
 /* 标题前面自动加章节号 */
 .counter h1 {
   counter-reset: h2counter;
