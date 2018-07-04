@@ -115,6 +115,7 @@ textarea {
 }
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
 table {
+  width: 100%;
   border-collapse: collapse;
   page-break-inside: avoid;
   font: normal 0.9em/1em Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", "PingFang SC", "Heiti SC", "Microsoft YaHei", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", sans-serif;
