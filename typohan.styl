@@ -57,45 +57,6 @@ h5
 h6
   font-size: 1.0em
 
-body.html2pdf
-  & h1
-    padding-top: 10em
-    text-align: center
-  & h1 + p
-    text-align: center
-    font-weight: bold
-  & h2
-    page-break-before: always	
-
-/* 标题前面自动加章节号 */
-.counter
-  h1
-    counter-reset: h2counter
-  h2
-    counter-reset: h3counter
-    &:before
-      counter-increment: h2counter
-      content: counter(h2counter) ".\0000a0\0000a0"
-  h3
-    counter-reset: h4counter
-    &:before
-      counter-increment: h3counter
-      content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0"
-  h4
-    counter-reset: h5counter
-    &:before
-      counter-increment: h4counter
-      content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0"
-  h5
-    counter-reset: h6counter
-    &:before
-      counter-increment: h5counter
-      content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0"
-  h6
-    &:before
-      counter-increment: h6counter
-      content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0"
-
 /* 段落 */
 p
   margin: 1em 0
@@ -104,10 +65,6 @@ p
   &.poem-like
     text-indent: 0
     margin-left: 2em
-.no-indent
-  p
-    text-indent: 0
-
 
 /* 列表 */
 ul, ol
@@ -245,9 +202,6 @@ pre
     border-radius: 0
     margin: 0
     padding: 0
-.html2pdf pre
-  word-wrap: break-word
-  white-space: pre-wrap
 
 hr
   border: none
@@ -272,6 +226,56 @@ kbd
   border-width: 1px 2px 2px 1px
   padding: 0 1px
 
-/* 隐藏有hidden属性或hidden类的元素 */
-[hidden], .hidden
+/* ===特定类样式=== */
+/* 隐藏hidden类的元素 */
+.hidden
   display: none
+.html2pdf
+  h1
+    padding-top: 10em
+    text-align: center
+  h1 + p
+    text-align: center
+    font-weight: bold
+  h2
+    page-break-before: always	
+  pre
+    word-wrap: break-word
+    white-space: pre-wrap
+.eng-style
+  p
+    text-indent: 0
+  em
+    font-style: italic
+    moz-webkit(text-emphasis, inherit)
+    moz-webkit(text-emphasis-position, inherit)
+    border: inherit
+    padding: inherit
+/* 标题前面自动加章节号 */
+.counter
+  h1
+    counter-reset: h2counter
+  h2
+    counter-reset: h3counter
+    &:before
+      counter-increment: h2counter
+      content: counter(h2counter) ".\0000a0\0000a0"
+  h3
+    counter-reset: h4counter
+    &:before
+      counter-increment: h3counter
+      content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0"
+  h4
+    counter-reset: h5counter
+    &:before
+      counter-increment: h4counter
+      content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0"
+  h5
+    counter-reset: h6counter
+    &:before
+      counter-increment: h5counter
+      content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0"
+  h6
+    &:before
+      counter-increment: h6counter
+      content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0"

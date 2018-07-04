@@ -46,53 +46,6 @@ h5 {
 h6 {
   font-size: 1em;
 }
-body.html2pdf h1 {
-  padding-top: 10em;
-  text-align: center;
-}
-body.html2pdf h1 + p {
-  text-align: center;
-  font-weight: bold;
-}
-body.html2pdf h2 {
-  page-break-before: always;
-}
-/* 标题前面自动加章节号 */
-.counter h1 {
-  counter-reset: h2counter;
-}
-.counter h2 {
-  counter-reset: h3counter;
-}
-.counter h2:before {
-  counter-increment: h2counter;
-  content: counter(h2counter) ".\0000a0\0000a0";
-}
-.counter h3 {
-  counter-reset: h4counter;
-}
-.counter h3:before {
-  counter-increment: h3counter;
-  content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
-}
-.counter h4 {
-  counter-reset: h5counter;
-}
-.counter h4:before {
-  counter-increment: h4counter;
-  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
-}
-.counter h5 {
-  counter-reset: h6counter;
-}
-.counter h5:before {
-  counter-increment: h5counter;
-  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0";
-}
-.counter h6:before {
-  counter-increment: h6counter;
-  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
-}
 /* 段落 */
 p {
   margin: 1em 0;
@@ -102,9 +55,6 @@ p {
 p.poem-like {
   text-indent: 0;
   margin-left: 2em;
-}
-.no-indent p {
-  text-indent: 0;
 }
 /* 列表 */
 ul,
@@ -289,10 +239,6 @@ pre code {
   margin: 0;
   padding: 0;
 }
-.html2pdf pre {
-  word-wrap: break-word;
-  white-space: pre-wrap;
-}
 hr {
   border: none;
   border-bottom: 1px solid #8d8d8d;
@@ -319,8 +265,73 @@ kbd {
   border-width: 1px 2px 2px 1px;
   padding: 0 1px;
 }
-/* 隐藏有hidden属性或hidden类的元素 */
-[hidden],
+/* ===特定类样式=== */
+/* 隐藏hidden类的元素 */
 .hidden {
   display: none;
+}
+.html2pdf h1 {
+  padding-top: 10em;
+  text-align: center;
+}
+.html2pdf h1 + p {
+  text-align: center;
+  font-weight: bold;
+}
+.html2pdf h2 {
+  page-break-before: always;
+}
+.html2pdf pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+.eng-style p {
+  text-indent: 0;
+}
+.eng-style em {
+  font-style: italic;
+  -moz-text-emphasis: inherit;
+  -webkit-text-emphasis: inherit;
+  text-emphasis: inherit;
+  -moz-text-emphasis-position: inherit;
+  -webkit-text-emphasis-position: inherit;
+  text-emphasis-position: inherit;
+  border: inherit;
+  padding: inherit;
+}
+/* 标题前面自动加章节号 */
+.counter h1 {
+  counter-reset: h2counter;
+}
+.counter h2 {
+  counter-reset: h3counter;
+}
+.counter h2:before {
+  counter-increment: h2counter;
+  content: counter(h2counter) ".\0000a0\0000a0";
+}
+.counter h3 {
+  counter-reset: h4counter;
+}
+.counter h3:before {
+  counter-increment: h3counter;
+  content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+}
+.counter h4 {
+  counter-reset: h5counter;
+}
+.counter h4:before {
+  counter-increment: h4counter;
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
+}
+.counter h5 {
+  counter-reset: h6counter;
+}
+.counter h5:before {
+  counter-increment: h5counter;
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0";
+}
+.counter h6:before {
+  counter-increment: h6counter;
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
 }
