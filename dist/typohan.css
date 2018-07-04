@@ -289,6 +289,10 @@ pre code {
   margin: 0;
   padding: 0;
 }
+.html2pdf pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
 hr {
   border: none;
   border-bottom: 1px solid #8d8d8d;
