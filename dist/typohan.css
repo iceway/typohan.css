@@ -1,4 +1,5 @@
 /* typohan.css | MIT License | github.com/iceway/typohan.css */
+/* Noto Sans和Source Han Sans是同一个字体，由谷歌和Adobe合作推出的，谷歌自己命名为Noto，而Adobe命名为Source Han，也就是思源（黑体，宋体） */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +8,7 @@
 html {
   color: #5c5c5c;
   background-color: #f8f8f8;
-  font: 17.6px/1.3em Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", "PingFang SC", "Heiti SC", "Microsoft YaHei", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", sans-serif;
+  font: 17.6px/1.3em Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", "PingFang SC", "Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", sans-serif;
   -moz-font-size-adjust: 100%;
   -webkit-font-size-adjust: 100%;
   font-size-adjust: 100%;
@@ -49,7 +50,7 @@ h6 {
 /* 段落 */
 p {
   margin: 1em 0;
-  text-indent: 2em;
+/*text-indent: 2em*/
   line-height: 1.6em;
 }
 p.poem-like {
@@ -111,14 +112,14 @@ button,
 input,
 select,
 textarea {
-  font: normal 1em/1.5em Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", "PingFang SC", "Heiti SC", "Microsoft YaHei", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", sans-serif;
+  font: normal 1em/1.5em Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", "PingFang SC", "Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", sans-serif;
 }
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
 table {
   width: 100%;
   border-collapse: collapse;
   page-break-inside: avoid;
-  font: normal 0.9em/1em Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", "PingFang SC", "Heiti SC", "Microsoft YaHei", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", sans-serif;
+  font: normal 0.9em/1em Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", "PingFang SC", "Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", sans-serif;
 }
 table tr,
 table th,
@@ -271,23 +272,9 @@ kbd {
 .hidden {
   display: none;
 }
+/* 给body元素加上html2pdf类，便于html页面转换成pdf */
 .html2pdf h1 {
-  padding-top: 10em;
-  text-align: center;
-}
-.html2pdf h1 + p {
-  text-align: center;
-  font-weight: bold;
-}
-.html2pdf h2 {
   page-break-before: always;
-}
-.html2pdf pre {
-  word-wrap: break-word;
-  white-space: pre-wrap;
-}
-.eng-style p {
-  text-indent: 0;
 }
 .eng-style em {
   font-style: italic;

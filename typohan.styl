@@ -2,7 +2,8 @@
 
 $font-size = 17.6px
 
-$font-hei = "PingFang SC", "Heiti SC", "Microsoft YaHei", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei"
+/* Noto Sans和Source Han Sans是同一个字体，由谷歌和Adobe合作推出的，谷歌自己命名为Noto，而Adobe命名为Source Han，也就是思源（黑体，宋体） */
+$font-hei = "PingFang SC", "Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei"
 $font-kai = "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN"
 
 $font-main = Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", $font-hei, sans-serif
@@ -60,7 +61,7 @@ h6
 /* 段落 */
 p
   margin: 1em 0
-  text-indent: 2em
+  /*text-indent: 2em*/
   line-height: 1.6em
   &.poem-like
     text-indent: 0
@@ -231,21 +232,11 @@ kbd
 /* 隐藏hidden类的元素 */
 .hidden
   display: none
+/* 给body元素加上html2pdf类，便于html页面转换成pdf */
 .html2pdf
   h1
-    padding-top: 10em
-    text-align: center
-  h1 + p
-    text-align: center
-    font-weight: bold
-  h2
     page-break-before: always	
-  pre
-    word-wrap: break-word
-    white-space: pre-wrap
 .eng-style
-  p
-    text-indent: 0
   em
     font-style: italic
     moz-webkit(text-emphasis, inherit)
