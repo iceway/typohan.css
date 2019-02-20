@@ -282,29 +282,34 @@ kbd
       margin-left: 2em
 /* 标题前面自动加章节号 */
 .counter
+  body
+    counter-reset: h1counter
   h1
     counter-reset: h2counter
+    counter-increment: h1counter
+    &:before
+      content: counter(h1counter) ".\0000a0\0000a0"
   h2
     counter-reset: h3counter
+    counter-increment: h2counter
     &:before
-      counter-increment: h2counter
-      content: counter(h2counter) ".\0000a0\0000a0"
+      content: counter(h1counter) "." counter(h2counter) ".\0000a0\0000a0"
   h3
     counter-reset: h4counter
+    counter-increment: h3counter
     &:before
-      counter-increment: h3counter
-      content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0"
+      content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0"
   h4
     counter-reset: h5counter
+    counter-increment: h4counter
     &:before
-      counter-increment: h4counter
-      content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0"
+      content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0"
   h5
     counter-reset: h6counter
+    counter-increment: h5counter
     &:before
-      counter-increment: h5counter
-      content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0"
+      content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0"
   h6
+    counter-increment: h6counter
     &:before
-      counter-increment: h6counter
-      content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0"
+      content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0"
