@@ -226,28 +226,29 @@ a
 address, caption, cite, dfn, var
   font: normal $font-mono
 
-/* 代码片段 */
-code, pre
-  background: $color-softlight
-code
-  margin: 0 0.2em
-  padding: 0.2em
-  font: normal 0.8em/1.5em $font-mono
+/* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highligh.js或者prism.js */
 pre
+  font-size: 0.8em
+  background: $color-softlight
   margin: 1em 0
-  padding: 0.8em 1em
-  border: 1px solid $color-softdark
-  border-radius: 5px
+  padding: 1em
+  //border: 1px solid $color-softdark
+  //border-radius: 5px
   display: block
-  line-height: 1.5em
   overflow-x: auto
   word-wrap: normal
   white-space: pre
-  code
-    background: transparent
-    border-radius: 0
+  & > code
+    font-family: $font-mono
+    background: none
     margin: 0
     padding: 0
+  :not(&) > code
+    font-family: $font-mono
+    font-size: 0.8em
+    background: $color-softlight
+    margin: 0 0.2em
+    padding: 0.1em
 
 hr
   border: none
