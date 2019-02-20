@@ -2,13 +2,50 @@
 
 $font-size = 17.6px
 
-/* Noto Sans和Source Han Sans是同一个字体，由谷歌和Adobe合作推出的，谷歌自己命名为Noto，而Adobe命名为Source Han，也就是思源（黑体，宋体） */
-$font-hei = "PingFang SC", "Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei"
-$font-kai = "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN"
+/* 字体选择, 参考：https://segmentfault.com/a/1190000006110417
+   英文 无衬线：
+	macos: "Helvetica Neue", Helvetica
+	windows: Tahoma, Arial
+	linux: "Liberation Sans"
+   中文 无衬线：
+	macos: "Hiragino Sans GB"
+	windows: "Microsoft YaHei"
+	linux: "WenQuanYi Micro Hei"
+   英文 衬线:
+	macos: Baskerville
+	windows: Georgia
+	linux: "Liberation Sans"
+   中文 衬线:
+	macos: "Kaiti SC", STkaiti
+	windows: KaiTi
+	linux: "AR PL UKai CN"
+   等宽:
+	macos: Consolas
+	windows: Consolas
+	linux: Inconsolata
+  中文字体中宋体可能更像英文意义上的衬线体，这里用楷体只是觉得显示效果更好。
+*/
 
-$font-main = Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", $font-hei, sans-serif
-$font-script = Baskerville, Georgia, "EB Garamond", "Liberation Serif", $font-kai, serif
-$font-mono = "Source Code Pro", monospace
+/* 三大操作系统默认字体 */
+$font-sans-en = "Helvetica Neue", Helvetica, Tahoma, Arial, "Liberation Sans"
+$font-sans-cn = "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei"
+$font-serif-en = Baskerville, Georgia, "Liberation Serif"
+$font-serif-cn = "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN"
+$font-mono = Consolas, Inconsolata
+
+/* 需要自己安装的字体
+   - Noto Sans和Source Han Sans是同一个字体，由谷歌和Adobe合作推出的，
+     谷歌自己命名为Noto，而Adobe命名为Source Han，也就是思源（黑体，宋体）
+*/
+/*$font-sans-en-pre = */
+$font-sans-cn-pre = "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC"
+$font-serif-en-pre = "EB Garamond"
+/*$font-serif-cn-pre = */
+$font-mono-pre = "Source Code Pro"
+
+$font-main = $font-sans-en, $font-sans-cn-pre, $font-sans-cn, sans-serif
+$font-script = $font-serif-en-pre, $font-serif-en, $font-serif-cn, serif
+$font-mono = $font-mono-pre, $font-mono, monospace
 
 $color-light = #f8f8f8
 $color-softlight = #f0f0f0
