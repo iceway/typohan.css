@@ -102,6 +102,9 @@ h6
 /* 段落 */
 p
   margin: 1em 0
+  /* 中文段落第一行应该缩进2个字的宽度，但是现在大多的网站都没有这个缩进。
+     而且考虑到可能用户全英文的页面，这里取消段落第一行的缩进。
+  */
   /*text-indent: 2em*/
   line-height: 1.6em
   &.poem-like
@@ -270,6 +273,13 @@ kbd
   padding: 0 1px
 
 /* ===特定类样式=== */
+/* 中文段落首行缩进2字 */
+.cn-style
+  p
+    text-indent: 2em
+    &.poem-like
+      text-indent: 0
+      margin-left: 2em
 /* 标题前面自动加章节号 */
 .counter
   h1
