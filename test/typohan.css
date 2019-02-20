@@ -249,6 +249,8 @@ pre {
   background: #f0f0f0;
   margin: 1em 0;
   padding: 1em;
+  border: 1px solid #adadad;
+  border-radius: 5px;
   display: block;
   overflow-x: auto;
   word-wrap: normal;
