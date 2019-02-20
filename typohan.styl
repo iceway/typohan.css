@@ -175,15 +175,6 @@ blockquote
   margin: 1em 0
   padding: 0 1em
 
-/* 中文环境：强调下面加点，而不是使用斜体 */
-em
-  moz-webkit(text-emphasis, filled circle)
-  moz-webkit(text-emphasis-position, under)
-  font-style: inherit
-  border-bottom-style: dotted
-  border-bottom-width: calc(0px)
-  padding-bottom: calc(0px)
-
 /* 不推荐在中文环境使用<i>标签强调某些内容，中文没有斜体字，而英文手写本来就是斜体字。 */
 i
   font-style: italic
@@ -279,13 +270,22 @@ kbd
   padding: 0 1px
 
 /* ===特定类样式=== */
-/* 中文段落首行缩进2字 */
+/* 传统中文样式：段落首行缩进，强调使用字体底部加着重号的方式等。 */
 .cn-style
   p
     text-indent: 2em
     &.poem-like
       text-indent: 0
       margin-left: 2em
+  /* 中文环境：强调下面加点，而不是使用斜体 */
+  em
+    moz-webkit(text-emphasis, filled circle)
+    moz-webkit(text-emphasis-position, under)
+    font-style: inherit
+    border-bottom-style: dotted
+    border-bottom-width: calc(0px)
+    padding-bottom: calc(0px)
+
 /* 标题前面自动加章节号 */
 .counter
   body
