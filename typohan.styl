@@ -84,6 +84,10 @@ h1, h2, h3, h4, h5, h6
   font-weight: bold
 h1
   font-size: 2.0em
+  /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
+     这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
+   */
+  page-break-before: always
 h2
   font-size: 1.8em
 h3
