@@ -1,5 +1,34 @@
 /* typohan.css | MIT License | github.com/iceway/typohan.css */
-/* Noto Sans和Source Han Sans是同一个字体，由谷歌和Adobe合作推出的，谷歌自己命名为Noto，而Adobe命名为Source Han，也就是思源（黑体，宋体） */
+/* 字体选择, 参考：https://segmentfault.com/a/1190000006110417
+   英文 无衬线：
+	macos: "Helvetica Neue", Helvetica
+	windows: Tahoma, Arial
+	linux: "Liberation Sans"
+   中文 无衬线：
+	macos: "Hiragino Sans GB"
+	windows: "Microsoft YaHei"
+	linux: "WenQuanYi Micro Hei"
+   英文 衬线:
+	macos: Baskerville
+	windows: Georgia
+	linux: "Liberation Sans"
+   中文 衬线:
+	macos: "Kaiti SC", STkaiti
+	windows: KaiTi
+	linux: "AR PL UKai CN"
+   等宽:
+	macos: Consolas
+	windows: Consolas
+	linux: Inconsolata
+  中文字体中宋体可能更像英文意义上的衬线体，这里用楷体只是觉得显示效果更好。
+*/
+/* 三大操作系统默认字体 */
+/* 需要自己安装的字体
+   - Noto Sans和Source Han Sans是同一个字体，由谷歌和Adobe合作推出的，
+     谷歌自己命名为Noto，而Adobe命名为Source Han，也就是思源（黑体，宋体）
+*/
+/*$font-sans-en-pre = */
+/*$font-serif-cn-pre = */
 * {
   margin: 0;
   padding: 0;
@@ -8,10 +37,15 @@
 html {
   color: #5c5c5c;
   background-color: #f8f8f8;
-  font: 17.6px/1.3em Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", "PingFang SC", "Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", sans-serif;
+  font: 17.6px/1.3em "Helvetica Neue", Helvetica, Tahoma, Arial, "Liberation Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   -moz-font-size-adjust: 100%;
   -webkit-font-size-adjust: 100%;
   font-size-adjust: 100%;
+}
+@media print {
+  html {
+    background-color: #fff;
+  }
 }
 body {
   margin: 2em auto 4em auto;
@@ -31,6 +65,10 @@ h6 {
 }
 h1 {
   font-size: 2em;
+/* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
+     这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
+   */
+  page-break-before: always;
 }
 h2 {
   font-size: 1.8em;
@@ -50,6 +88,9 @@ h6 {
 /* 段落 */
 p {
   margin: 1em 0;
+/* 中文段落第一行应该缩进2个字的宽度，但是现在大多的网站都没有这个缩进。
+     而且考虑到可能用户全英文的页面，这里取消段落第一行的缩进。
+  */
 /*text-indent: 2em*/
   line-height: 1.6em;
 }
@@ -112,14 +153,14 @@ button,
 input,
 select,
 textarea {
-  font: normal 1em/1.5em Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", "PingFang SC", "Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", sans-serif;
+  font: normal 1em/1.5em "Helvetica Neue", Helvetica, Tahoma, Arial, "Liberation Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
 table {
   width: 100%;
   border-collapse: collapse;
   page-break-inside: avoid;
-  font: normal 0.9em/1em Helvetica, Tahoma, Arial, Roboto, "Liberation Sans", "PingFang SC", "Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", sans-serif;
+  font: normal 0.9em/1em "Helvetica Neue", Helvetica, Tahoma, Arial, "Liberation Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 table tr,
 table th,
@@ -138,25 +179,13 @@ table caption {
 }
 /* 块及段落引用 */
 blockquote {
-  font: normal 1em/1.5 Baskerville, Georgia, "EB Garamond", "Liberation Serif", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", serif;
+  font: normal 1em/1.5 "EB Garamond", Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", serif;
   color: #6c6c6c;
+  background: #f0f0f0;
   border-left: 3px solid #dcdcdc;
   position: relative;
-  margin: 1em 2em;
-  padding-left: 2em;
-}
-/* 中文环境：强调下面加点，而不是使用斜体 */
-em {
-  -moz-text-emphasis: filled circle;
-  -webkit-text-emphasis: filled circle;
-  text-emphasis: filled circle;
-  -moz-text-emphasis-position: under;
-  -webkit-text-emphasis-position: under;
-  text-emphasis-position: under;
-  font-style: inherit;
-  border-bottom-style: dotted;
-  border-bottom-width: calc(0px);
-  padding-bottom: calc(0px);
+  margin: 1em 0;
+  padding: 0 1em;
 }
 /* 不推荐在中文环境使用<i>标签强调某些内容，中文没有斜体字，而英文手写本来就是斜体字。 */
 i {
@@ -212,34 +241,31 @@ caption,
 cite,
 dfn,
 var {
-  font: normal "Source Code Pro", monospace;
+  font: normal "Source Code Pro", Consolas, Inconsolata, monospace;
 }
-/* 代码片段 */
-code,
+/* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highligh.js或者prism.js */
 pre {
+  font-size: 0.8em;
   background: #f0f0f0;
-}
-code {
-  margin: 0 0.2em;
-  padding: 0.2em;
-  font: normal 0.8em/1.5em "Source Code Pro", monospace;
-}
-pre {
   margin: 1em 0;
-  padding: 0.8em 1em;
-  border: 1px solid #5c5c5c;
-  border-radius: 5px;
+  padding: 1em;
   display: block;
-  line-height: 1.5em;
   overflow-x: auto;
   word-wrap: normal;
   white-space: pre;
 }
-pre code {
-  background: transparent;
-  border-radius: 0;
+pre > code {
+  font-family: "Source Code Pro", Consolas, Inconsolata, monospace;
+  background: none;
   margin: 0;
   padding: 0;
+}
+:not(pre) > code {
+  font-family: "Source Code Pro", Consolas, Inconsolata, monospace;
+  font-size: 0.8em;
+  background: #f0f0f0;
+  margin: 0 0.2em;
+  padding: 0.1em;
 }
 hr {
   border: none;
@@ -268,58 +294,68 @@ kbd {
   padding: 0 1px;
 }
 /* ===特定类样式=== */
-/* 隐藏hidden类的元素 */
-.hidden {
-  display: none;
+/* 传统中文样式：段落首行缩进，强调使用字体底部加着重号的方式等。 */
+.cn-style p {
+  text-indent: 2em;
 }
-/* 给body元素加上html2pdf类，便于html页面转换成pdf */
-.html2pdf h1 {
-  page-break-before: always;
+.cn-style p.poem-like {
+  text-indent: 0;
+  margin-left: 2em;
 }
-.eng-style em {
-  font-style: italic;
-  -moz-text-emphasis: inherit;
-  -webkit-text-emphasis: inherit;
-  text-emphasis: inherit;
-  -moz-text-emphasis-position: inherit;
-  -webkit-text-emphasis-position: inherit;
-  text-emphasis-position: inherit;
-  border: inherit;
-  padding: inherit;
+.cn-style em {
+  -moz-text-emphasis: filled circle;
+  -webkit-text-emphasis: filled circle;
+  text-emphasis: filled circle;
+  -moz-text-emphasis-position: under;
+  -webkit-text-emphasis-position: under;
+  text-emphasis-position: under;
+  font-style: inherit;
+  border-bottom-style: dotted;
+  border-bottom-width: calc(0px);
+  padding-bottom: calc(0px);
 }
 /* 标题前面自动加章节号 */
+.counter body {
+  counter-reset: h1counter;
+}
 .counter h1 {
   counter-reset: h2counter;
+  counter-increment: h1counter;
+}
+.counter h1:before {
+  content: counter(h1counter) ".\0000a0\0000a0";
 }
 .counter h2 {
   counter-reset: h3counter;
+  counter-increment: h2counter;
 }
 .counter h2:before {
-  counter-increment: h2counter;
-  content: counter(h2counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) ".\0000a0\0000a0";
 }
 .counter h3 {
   counter-reset: h4counter;
+  counter-increment: h3counter;
 }
 .counter h3:before {
-  counter-increment: h3counter;
-  content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
 }
 .counter h4 {
   counter-reset: h5counter;
+  counter-increment: h4counter;
 }
 .counter h4:before {
-  counter-increment: h4counter;
-  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
 }
 .counter h5 {
   counter-reset: h6counter;
+  counter-increment: h5counter;
 }
 .counter h5:before {
-  counter-increment: h5counter;
-  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0";
+}
+.counter h6 {
+  counter-increment: h6counter;
 }
 .counter h6:before {
-  counter-increment: h6counter;
-  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
 }
