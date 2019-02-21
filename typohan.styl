@@ -322,8 +322,6 @@ kbd
 
 /* 独立封面，<header>标签中的特定类段落。*/
 header
-  &.cover
-    padding-top: 10em
   p.title
     font-size: 200%
     text-align: center
@@ -334,3 +332,7 @@ header
     text-align: center
   p.date
     text-align: center
+@media print
+  header
+    &.cover
+      padding-top: 15em
