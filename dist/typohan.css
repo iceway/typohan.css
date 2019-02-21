@@ -360,9 +360,6 @@ kbd {
   content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
 }
 /* 独立封面，<header>标签中的特定类段落。*/
-header.cover {
-  padding-top: 10em;
-}
 header p.title {
   font-size: 200%;
   text-align: center;
@@ -376,4 +373,9 @@ header p.author {
 }
 header p.date {
   text-align: center;
+}
+@media print {
+  header.cover {
+    padding-top: 15em;
+  }
 }
