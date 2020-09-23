@@ -4,8 +4,8 @@ $font-size = 17.6px
 
 /* 字体选择, 参考：https://segmentfault.com/a/1190000006110417
    英文 无衬线：
-	macos: "Helvetica Neue", Helvetica
-	windows: Tahoma, Arial
+	macos: Helvetica
+	windows: Arial
 	linux: "Liberation Sans"
    中文 无衬线：
 	macos: "Hiragino Sans GB"
@@ -14,9 +14,9 @@ $font-size = 17.6px
    英文 衬线:
 	macos: Baskerville
 	windows: Georgia
-	linux: "Liberation Sans"
+	linux: "Liberation Serif"
    中文 衬线:
-	macos: "Kaiti SC", STkaiti
+	macos: STkaiti
 	windows: KaiTi
 	linux: "AR PL UKai CN"
    等宽:
@@ -27,24 +27,22 @@ $font-size = 17.6px
 */
 
 /* 三大操作系统默认字体 */
-$font-sans-en = "Helvetica Neue", Helvetica, Tahoma, Arial, "Liberation Sans"
+$font-sans-en = Helvetica, Arial, "Liberation Sans"
 $font-sans-cn = "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei"
 $font-serif-en = Baskerville, Georgia, "Liberation Serif"
-$font-serif-cn = "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN"
+$font-serif-cn = "Kaiti SC", STkaiti, KaiTi, "AR PL KaitiM GB", "AR PL UKai CN"
 $font-mono = Consolas, Inconsolata
 
 /* 需要自己安装的字体
    - Noto Sans和Source Han Sans是同一个字体，由谷歌和Adobe合作推出的，
      谷歌自己命名为Noto，而Adobe命名为Source Han，也就是思源（黑体，宋体）
 */
-/*$font-sans-en-pre = */
-$font-sans-cn-pre = "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC"
-$font-serif-en-pre = "EB Garamond"
-/*$font-serif-cn-pre = */
-$font-mono-pre = "Source Code Pro"
+$font-sans-pre = "Noto Sans CJK SC", "Source Han Sans SC"
+$font-serif-pre = "Noto Serif CJK SC", "Source Han Serif SC"
+$font-mono-pre = "Sarasa Mono SC", "Source Code Pro"
 
-$font-main = $font-sans-en, $font-sans-cn-pre, $font-sans-cn, sans-serif
-$font-script = $font-serif-en-pre, $font-serif-en, $font-serif-cn, serif
+$font-main = $font-sans-pre, $font-sans-en, $font-sans-cn, sans-serif
+$font-serif = $font-serif-pre, $font-serif-en, $font-serif-cn, serif
 $font-mono = $font-mono-pre, $font-mono, monospace
 
 $color-light = #f8f8f8
@@ -72,10 +70,6 @@ html
   font: $font-size/1.3em $font-main
   moz-webkit(font-size-adjust, 100%)
 
-@media print
-  html
-    background-color: white
-
 body
   margin: 2em auto 4em auto
   max-width: 1024px
@@ -88,10 +82,6 @@ h1, h2, h3, h4, h5, h6
   font-weight: bold
 h1
   font-size: 2.0em
-  /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
-     这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
-   */
-  page-break-before: always
 h2
   font-size: 1.8em
 h3
@@ -167,7 +157,7 @@ table
 
 /* 块及段落引用 */
 blockquote
-  font: normal 1em/1.5 $font-script
+  font: normal 1em/1.5 $font-serif
   color: lighten($color-fg, 10%)
   background: $color-softlight
   border-left: 3px solid gainsboro
@@ -222,7 +212,7 @@ a
 address, caption, cite, dfn, var
   font: normal $font-mono
 
-/* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highligh.js或者prism.js */
+/* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highlight.js或者prism.js */
 pre
   font-size: 0.8em
   background: $color-softlight
@@ -262,12 +252,21 @@ q
   &:after
     content: close-quote
 
-/* 键盘按键 */
+/* 键盘按键, https://github.com/auth0/kbd/blob/gh-pages/kbd.css */
 kbd
   background-color: $color-softlight
-  border-style: solid
-  border-width: 1px 2px 2px 1px
-  padding: 0 1px
+  font-family: $font-mono
+  display: inline-block
+  border-radius: 3px
+  padding: 0px 4px
+  box-shadow: 1px 1px 1px #777
+  margin: 2px
+  font-size: small
+  vertical-align: text-bottom
+  cursor: pointer
+  font-variant: small-caps
+  font-weight: bold
+  letter-spacing: 1px
 
 /* ===特定类样式=== */
 /* 传统中文样式：段落首行缩进，强调使用字体底部加着重号的方式等。 */
@@ -322,6 +321,8 @@ kbd
 
 /* 独立封面，<header>标签中的特定类段落。*/
 header
+  color: $color-harddark
+  font-weight: bold
   p.title
     font-size: 200%
     text-align: center
@@ -332,7 +333,16 @@ header
     text-align: center
   p.date
     text-align: center
+
 @media print
+  html
+    background-color: white
   header
     &.cover
       padding-top: 15em
+    page-break-after: always
+  h1
+    /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
+       这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
+     */
+    page-break-before: always
