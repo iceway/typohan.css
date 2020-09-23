@@ -1,8 +1,8 @@
 /* typohan.css | MIT License | github.com/iceway/typohan.css */
 /* 字体选择, 参考：https://segmentfault.com/a/1190000006110417
    英文 无衬线：
-	macos: "Helvetica Neue", Helvetica
-	windows: Tahoma, Arial
+	macos: Helvetica
+	windows: Arial
 	linux: "Liberation Sans"
    中文 无衬线：
 	macos: "Hiragino Sans GB"
@@ -11,9 +11,9 @@
    英文 衬线:
 	macos: Baskerville
 	windows: Georgia
-	linux: "Liberation Sans"
+	linux: "Liberation Serif"
    中文 衬线:
-	macos: "Kaiti SC", STkaiti
+	macos: STkaiti
 	windows: KaiTi
 	linux: "AR PL UKai CN"
    等宽:
@@ -27,8 +27,6 @@
    - Noto Sans和Source Han Sans是同一个字体，由谷歌和Adobe合作推出的，
      谷歌自己命名为Noto，而Adobe命名为Source Han，也就是思源（黑体，宋体）
 */
-/*$font-sans-en-pre = */
-/*$font-serif-cn-pre = */
 * {
   margin: 0;
   padding: 0;
@@ -37,15 +35,10 @@
 html {
   color: #5c5c5c;
   background-color: #f8f8f8;
-  font: 17.6px/1.3em "Helvetica Neue", Helvetica, Tahoma, Arial, "Liberation Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font: 17.6px/1.3em "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, "Liberation Sans", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   -moz-font-size-adjust: 100%;
   -webkit-font-size-adjust: 100%;
   font-size-adjust: 100%;
-}
-@media print {
-  html {
-    background-color: #fff;
-  }
 }
 body {
   margin: 2em auto 4em auto;
@@ -65,10 +58,6 @@ h6 {
 }
 h1 {
   font-size: 2em;
-/* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
-     这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
-   */
-  page-break-before: always;
 }
 h2 {
   font-size: 1.8em;
@@ -153,14 +142,14 @@ button,
 input,
 select,
 textarea {
-  font: normal 1em/1.5em "Helvetica Neue", Helvetica, Tahoma, Arial, "Liberation Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font: normal 1em/1.5em "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, "Liberation Sans", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
 table {
   width: 100%;
   border-collapse: collapse;
   page-break-inside: avoid;
-  font: normal 0.9em/1em "Helvetica Neue", Helvetica, Tahoma, Arial, "Liberation Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Source Han Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font: normal 0.9em/1em "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, "Liberation Sans", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 table tr,
 table th,
@@ -179,7 +168,7 @@ table caption {
 }
 /* 块及段落引用 */
 blockquote {
-  font: normal 1em/1.5 "EB Garamond", Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", serif;
+  font: normal 1em/1.5 "Noto Serif CJK SC", "Source Han Serif SC", Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STkaiti, KaiTi, "AR PL KaitiM GB", "AR PL UKai CN", serif;
   color: #6c6c6c;
   background: #f0f0f0;
   border-left: 3px solid #dcdcdc;
@@ -241,9 +230,9 @@ caption,
 cite,
 dfn,
 var {
-  font: normal "Source Code Pro", Consolas, Inconsolata, monospace;
+  font: normal "Sarasa Mono SC", "Source Code Pro", Consolas, Inconsolata, monospace;
 }
-/* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highligh.js或者prism.js */
+/* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highlight.js或者prism.js */
 pre {
   font-size: 0.8em;
   background: #f0f0f0;
@@ -255,13 +244,13 @@ pre {
   white-space: pre;
 }
 pre > code {
-  font-family: "Source Code Pro", Consolas, Inconsolata, monospace;
+  font-family: "Sarasa Mono SC", "Source Code Pro", Consolas, Inconsolata, monospace;
   background: none;
   margin: 0;
   padding: 0;
 }
 :not(pre) > code {
-  font-family: "Source Code Pro", Consolas, Inconsolata, monospace;
+  font-family: "Sarasa Mono SC", "Source Code Pro", Consolas, Inconsolata, monospace;
   font-size: 0.8em;
   background: #f0f0f0;
   margin: 0 0.2em;
@@ -286,12 +275,21 @@ q:before {
 q:after {
   content: close-quote;
 }
-/* 键盘按键 */
+/* 键盘按键, https://github.com/auth0/kbd/blob/gh-pages/kbd.css */
 kbd {
   background-color: #f0f0f0;
-  border-style: solid;
-  border-width: 1px 2px 2px 1px;
-  padding: 0 1px;
+  font-family: "Sarasa Mono SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0px 4px;
+  box-shadow: 1px 1px 1px #777;
+  margin: 2px;
+  font-size: small;
+  vertical-align: text-bottom;
+  cursor: pointer;
+  font-variant: small-caps;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 /* ===特定类样式=== */
 /* 传统中文样式：段落首行缩进，强调使用字体底部加着重号的方式等。 */
@@ -360,6 +358,10 @@ kbd {
   content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
 }
 /* 独立封面，<header>标签中的特定类段落。*/
+header {
+  color: #282828;
+  font-weight: bold;
+}
 header p.title {
   font-size: 200%;
   text-align: center;
@@ -375,7 +377,19 @@ header p.date {
   text-align: center;
 }
 @media print {
+  html {
+    background-color: #fff;
+  }
+  header {
+    page-break-after: always;
+  }
   header.cover {
     padding-top: 15em;
+  }
+  h1 {
+/* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
+       这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
+     */
+    page-break-before: always;
   }
 }
