@@ -35,7 +35,7 @@
 html {
   color: #5c5c5c;
   background-color: #f8f8f8;
-  font: 17.6px/1.3em "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, "Liberation Sans", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font: 17.6px/1.3em "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   -moz-font-size-adjust: 100%;
   -webkit-font-size-adjust: 100%;
   font-size-adjust: 100%;
@@ -142,14 +142,14 @@ button,
 input,
 select,
 textarea {
-  font: normal 1em/1.5em "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, "Liberation Sans", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font: normal 1em/1.5em "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
 table {
   width: 100%;
   border-collapse: collapse;
   page-break-inside: avoid;
-  font: normal 0.9em/1em "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, "Liberation Sans", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font: normal 0.9em/1em "Noto Sans CJK SC", "Source Han Sans SC", Helvetica, Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 table tr,
 table th,
@@ -168,7 +168,7 @@ table caption {
 }
 /* 块及段落引用 */
 blockquote {
-  font: normal 1em/1.5 "Noto Serif CJK SC", "Source Han Serif SC", Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STkaiti, KaiTi, "AR PL KaitiM GB", "AR PL UKai CN", serif;
+  font: normal 1em/1.5 "AR PL UKai CN" /*, "Noto Serif CJK SC", "Source Han Serif SC"*/, Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "FZKai-Z03", serif;
   color: #6c6c6c;
   background: #f0f0f0;
   border-left: 3px solid #dcdcdc;
