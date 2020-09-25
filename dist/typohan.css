@@ -270,7 +270,6 @@ kbd {
   font-size: small;
   vertical-align: text-bottom;
   cursor: pointer;
-  font-variant: small-caps;
   font-weight: bold;
   letter-spacing: 1px;
 }
