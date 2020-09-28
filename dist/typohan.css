@@ -88,6 +88,12 @@ ul.none-list,
 ol.none-list {
   list-style: none;
 }
+#table-of-content+ul {
+  list-style: none;
+}
+#table-of-content+ul ul {
+  list-style: none;
+}
 /* HTML5标签默认显示为块 */
 article,
 aside,
