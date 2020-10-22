@@ -134,21 +134,23 @@ table {
   border-collapse: collapse;
   page-break-inside: avoid;
   font: normal 0.9em/1em Helvetica, Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  border: 2px solid #5c5c5c;
 }
 table tr,
 table th,
-table td,
-table caption {
+table td {
   border: 1px solid #adadad;
   padding: 0.5em 1em;
   text-align: left;
 }
-table th,
-table caption {
+table th {
   font-weight: bold;
+  background-color: #dedede;
 }
 table caption {
   text-align: center;
+  font-weight: bold;
+  padding: 0.5em;
 }
 /* 块及段落引用 */
 blockquote {
