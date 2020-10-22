@@ -13,7 +13,7 @@
 html {
   color: #5c5c5c;
   background-color: #f8f8f8;
-  font: 17.6px/1.3em Helvetica, Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  font: 17.6px/1.3em "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
   -moz-font-size-adjust: 100%;
   -webkit-font-size-adjust: 100%;
   font-size-adjust: 100%;
@@ -126,14 +126,14 @@ button,
 input,
 select,
 textarea {
-  font: normal 1em/1.5em Helvetica, Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  font: normal 1em/1.5em "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
 }
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
 table {
   width: 100%;
   border-collapse: collapse;
   page-break-inside: avoid;
-  font: normal 0.9em/1em Helvetica, Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  font: normal 0.9em/1em "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
   border: 2px solid #5c5c5c;
 }
 table tr,
@@ -154,7 +154,7 @@ table caption {
 }
 /* 块及段落引用 */
 blockquote {
-  font: normal 1em/1.5em Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+  font: normal 1em/1.5em "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "Noto Serif CJK SC", "Source Han Serif SC", serif;
   color: #6c6c6c;
   background: #f0f0f0;
   border-left: 3px solid #dcdcdc;
@@ -202,13 +202,13 @@ small {
 }
 /* 链接颜色 */
 a {
-  color: inherit;
+  color: #478fb1;
   background-color: transparent;
   text-decoration: none;
-  border-bottom: 1px solid #cecece;
+  border-bottom: 1px solid #478fb1;
 }
 a:hover {
-  border-bottom-color: #5c5c5c;
+  border-bottom-color: #a2c8d9;
 }
 /* 地址，变量等使用等宽字体 */
 address,
