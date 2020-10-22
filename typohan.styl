@@ -9,18 +9,16 @@ $font-size = 17.6px
 */
 
 /* 三大操作系统默认字体 */
-$font-sans-en = Helvetica, Arial, "Liberation Sans"
+//$font-sans-en = Helvetica, Arial, "Liberation Sans"
 $font-sans-cn = "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei"
-$font-serif-en = Baskerville, Georgia, "Liberation Serif"
+//$font-serif-en = Baskerville, Georgia, "Liberation Serif"
 $font-serif-cn = "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "Noto Serif CJK SC", "Source Han Serif SC"
 $font-mono = Consolas, Inconsolata
 
-//$font-sans-cn-custom = "Noto Sans CJK SC", "Source Han Sans SC"
-//$font-serif-cn-custom = "Noto Serif CJK SC", "Source Han Serif SC"
 $font-mono-custom = "Sarasa Mono SC", "Source Code Pro"
 
-$font-main = $font-sans-en, $font-sans-cn, sans-serif
-$font-serif = $font-serif-en, $font-serif-cn, serif
+$font-main = $font-sans-cn, sans-serif
+$font-serif = $font-serif-cn, serif
 $font-mono = $font-mono-custom, $font-mono, monospace
 
 $color-light = #f8f8f8
@@ -31,6 +29,8 @@ $color-harddark = #282828
 
 $color-bg = $color-light
 $color-fg = $color-softdark
+
+$color-cyan =  #478FB1
 
 moz-webkit(x, args...)
   -moz-{x}: args
@@ -188,12 +188,12 @@ small
 
 /* 链接颜色 */
 a
-  color: inherit
+  color: $color-cyan
   background-color: transparent
   text-decoration: none
-  border-bottom: 1px solid lighten($color-fg, 70%)
+  border-bottom: 1px solid $color-cyan
   &:hover
-    border-bottom-color: $color-fg
+    border-bottom-color:  lighten($color-cyan, 50%)
 
 /* 地址，变量等使用等宽字体 */
 address, caption, cite, dfn, var
