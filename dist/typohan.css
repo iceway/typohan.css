@@ -119,8 +119,6 @@ video {
 img {
   max-width: 98%;
   display: block;
-  border: 1px solid #5c5c5c;
-  border-radius: 8px;
   margin: 1em auto;
   box-shadow: 5px 5px 10px #5c5c5c;
 }
