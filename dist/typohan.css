@@ -247,9 +247,11 @@ pre > code {
 :not(pre) > code {
   font-family: "Sarasa Mono SC", "Source Code Pro", Consolas, Inconsolata, monospace;
   font-size: 0.8em;
-  background: #f0f0f0;
+  color: #fff;
+  background: #f06292;
   margin: 0 0.2em;
-  padding: 0.1em;
+  padding: 0.1em 0.3em;
+  border-radius: 5px;
 }
 hr {
   border: none;
