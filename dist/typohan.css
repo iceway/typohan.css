@@ -143,6 +143,7 @@ table {
   page-break-inside: avoid;
   font: normal 0.9em/1em "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
   border: 2px solid #5c5c5c;
+  line-height: normal;
 }
 table tr,
 table th,
