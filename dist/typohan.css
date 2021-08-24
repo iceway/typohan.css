@@ -378,13 +378,104 @@ header p.date {
   header {
     page-break-after: always;
   }
-  header.cover {
-    padding-top: 15em;
-  }
   h1 {
 /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
        这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
      */
     page-break-before: always;
   }
+}
+/* 自定义 div 和 span 样式，参考 vuepress */
+div.tip,
+div.warning,
+div.danger {
+  display: block;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+}
+div.tip {
+  background-color: #e2f4e9;
+  border-color: #42b983;
+  color: #285941;
+}
+div.warning {
+  background-color: rgba(255,229,100,0.3);
+  border-color: #e7c000;
+  color: #6b5900;
+}
+div.danger {
+  background-color: #ffe6e6;
+  border-color: #c00;
+  color: #4d0000;
+}
+div.output {
+  display: block;
+  padding: 0.1rem 1.5rem;
+  border: 1px solid #5c5c5c;
+  border-radius: 3px;
+  margin: 1rem 0;
+  background-color: #eee;
+}
+span.tip,
+span.warning,
+span.danger {
+  margin: 0 0.1em;
+  padding: 0 0.1em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+span.tip {
+  background-color: #e2f4e9;
+  border-color: #42b983;
+  color: #285941;
+}
+span.warning {
+  background-color: rgba(255,229,100,0.3);
+  border-color: #e7c000;
+  color: #6b5900;
+}
+span.danger {
+  background-color: #ffe6e6;
+  border-color: #c00;
+  color: #4d0000;
+}
+span.mark {
+  background-color: #ff0;
+  color: #000;
+}
+/* 标签样式，monokai配色。 */
+div.document-tag span.tag {
+  display: inline-block;
+  border: 2px solid;
+  border-radius: 1em;
+  padding: 0.1em 0.5em;
+  margin: 0.2em 0.3em;
+  text-indent: 0;
+  color: #000;
+}
+div.document-tag span.tag:nth-child(6n+1) {
+  background-color: #ff6188;
+  border-color: #f6003d;
+}
+div.document-tag span.tag:nth-child(6n+2) {
+  background-color: #fc9867;
+  border-color: #f45305;
+}
+div.document-tag span.tag:nth-child(6n+3) {
+  background-color: #ffd866;
+  border-color: #faba00;
+}
+div.document-tag span.tag:nth-child(6n+4) {
+  background-color: #a9dc76;
+  border-color: #76bc30;
+}
+div.document-tag span.tag:nth-child(6n+5) {
+  background-color: #78dce8;
+  border-color: #24c0d3;
+}
+div.document-tag span.tag:nth-child(6n+6) {
+  background-color: #ab9df2;
+  border-color: #5033e4;
 }
