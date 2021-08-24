@@ -399,3 +399,31 @@ span.danger
 span.mark
   background-color: yellow
   color: black
+
+/* 标签样式，monokai配色。 */
+div.document-tag span.tag
+  display: inline-block
+  border: 2px solid
+  border-radius: 1em
+  padding: 0.1em 0.5em
+  margin: 0.2em 0.3em
+  text-indent: 0
+  color: black
+  &:nth-child(6n+1)
+    background-color: #ff6188
+    border-color: darken(#ff6188, 30%)
+  &:nth-child(6n+2)
+    background-color: #fc9867
+    border-color: darken(#fc9867, 30%)
+  &:nth-child(6n+3)
+    background-color: #ffd866
+    border-color: darken(#ffd866, 30%)
+  &:nth-child(6n+4)
+    background-color: #a9dc76
+    border-color: darken(#a9dc76, 30%)
+  &:nth-child(6n+5)
+    background-color: #78dce8
+    border-color: darken(#78dce8, 30%)
+  &:nth-child(6n+6)
+    background-color: #ab9df2
+    border-color: darken(#ab9df2, 30%)
