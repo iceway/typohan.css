@@ -343,3 +343,59 @@ header
        这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
      */
     page-break-before: always
+
+/* 自定义 div 和 span 样式，参考 vuepress */
+div.tip, div.warning, div.danger
+  display: block
+  padding: .1rem 1.5rem
+  border-left-width: .5rem
+  border-left-style: solid
+  margin: 1rem 0
+
+div.tip
+  background-color: #e2f4e9
+  border-color: #42b983
+  color: #285941
+
+div.warning
+  background-color: rgba(255,229,100,.3)
+  border-color: #e7c000
+  color: #6b5900
+
+div.danger
+  background-color: #ffe6e6
+  border-color: #c00
+  color: #4d0000
+
+div.output
+  display: block
+  padding: .1rem 1.5rem
+  border: 1px solid #5c5c5c
+  border-radius: 3px
+  margin: 1rem 0
+  background-color: #eeeeee
+
+span.tip, span.warning, span.danger
+  margin: 0 0.1em
+  padding: 0 0.1em
+  border-bottom-width: 1px
+  border-bottom-style: solid
+
+span.tip
+  background-color: #e2f4e9
+  border-color: #42b983
+  color: #285941
+
+span.warning
+  background-color: rgba(255,229,100,.3)
+  border-color: #e7c000
+  color: #6b5900
+
+span.danger
+  background-color: #ffe6e6
+  border-color: #c00
+  color: #4d0000
+
+span.mark
+  background-color: yellow
+  color: black
