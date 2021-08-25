@@ -419,10 +419,10 @@ div.danger {
 div.output {
   display: block;
   padding: 0.1rem 1.5rem;
-  border: 1px solid #5c5c5c;
-  border-radius: 3px;
+  border: 1px dashed #5c5c5c;
+  border-radius: 5px;
   margin: 1rem 0;
-  background-color: #eee;
+  background-color: #f0f0f0;
 }
 span.tip,
 span.warning,
