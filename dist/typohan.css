@@ -5,6 +5,8 @@
   中文字体中宋体可能更像英文意义上的衬线体，这里用楷体只是觉得显示效果更好。
 */
 /* 三大操作系统默认字体 */
+/* 参考 vuepress */
+/* 参考 monokai pro */
 * {
   margin: 0;
   padding: 0;
@@ -482,4 +484,42 @@ div.document-tag span.tag:nth-child(6n+5) {
 div.document-tag span.tag:nth-child(6n+6) {
   background-color: #ab9df2;
   border-color: #5033e4;
+}
+/* 特殊彩色块 */
+div.custom-box {
+  display: block;
+  border: 1px solid;
+  box-shadow: 5px 5px 5px #5c5c5c;
+  padding: 0.1rem 1.5rem;
+  margin: 1rem 5px;
+}
+div.red {
+  background-color: #ff6188;
+  border-color: #f6003d;
+  color: #000;
+}
+div.orange {
+  background-color: #fc9867;
+  border-color: #f45305;
+  color: #000;
+}
+div.yellow {
+  background-color: #ffd866;
+  border-color: #faba00;
+  color: #000;
+}
+div.green {
+  background-color: #a9dc76;
+  border-color: #76bc30;
+  color: #000;
+}
+div.blue {
+  background-color: #78dce8;
+  border-color: #24c0d3;
+  color: #000;
+}
+div.violet {
+  background-color: #ab9df2;
+  border-color: #5033e4;
+  color: #000;
 }
