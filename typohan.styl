@@ -340,16 +340,13 @@ kbd
 header
   color: $color-harddark
   font-weight: bold
-  p.title
-    font-size: 200%
-    text-align: center
-  p.subtitle
-    font-size: 130%
-    text-align: center
-  p.author
-    text-align: center
-  p.date
-    text-align: center
+  p
+    &.title, &.subtitle, &.author, &.date
+      text-align: center
+    &.title
+      font-size: 200%
+    &.subtitle
+      font-size: 130%
 
 @media print
   html
@@ -366,27 +363,50 @@ header
     page-break-after: always
 
 /* 自定义 div 和 span 样式，参考 vuepress */
-div.tip, div.warning, div.danger
-  display: block
-  padding: .1rem 1.5rem
-  border-left-width: .5rem
-  border-left-style: solid
-  margin: 1rem 0
-
-div.tip
-  background-color: $color-tip-bg
-  border-color: $color-tip-border
-  color: $color-tip
-
-div.warning
-  background-color: $color-warning-bg
-  border-color: $color-warning-border
-  color: $color-warning
-
-div.danger
-  background-color: $color-danger-bg
-  border-color: $color-danger-border
-  color: $color-danger
+div
+  &.tip, &.warning, &.danger
+    display: block
+    padding: .1rem 1.5rem
+    border-left-width: .5rem
+    border-left-style: solid
+    margin: 1rem 0
+  &.tip
+    background-color: $color-tip-bg
+    border-color: $color-tip-border
+    color: $color-tip
+  &.warning
+    background-color: $color-warning-bg
+    border-color: $color-warning-border
+    color: $color-warning
+  &.danger
+    background-color: $color-danger-bg
+    border-color: $color-danger-border
+    color: $color-danger
+  &.red, &.orange, &.yellow, &.green, &.blue, &.violet
+    display: block
+    border: 1px solid
+    box-shadow: 5px 5px 5px $color-softdark
+    padding: .1rem 1.5rem
+    margin: 1rem 5px
+    color: black
+  &.red
+    background-color: $color-red
+    border-color: darken($color-red, 30%)
+  &.orange
+    background-color: $color-orange
+    border-color: darken($color-orange, 30%)
+  &.yellow
+    background-color: $color-yellow
+    border-color: darken($color-yellow, 30%)
+  &.green
+    background-color: $color-green
+    border-color: darken($color-green, 30%)
+  &.blue
+    background-color: $color-blue
+    border-color: darken($color-blue, 30%)
+  &.violet
+    background-color: $color-violet
+    border-color: darken($color-violet, 30%)
 
 div.output
   display: block
@@ -396,87 +416,54 @@ div.output
   margin: 1rem 0
   background-color: $color-softlight
 
-span.tip, span.warning, span.danger
-  margin: 0 0.1em
-  padding: 0 0.1em
-  border-bottom-width: 1px
-  border-bottom-style: solid
-
-span.tip
-  background-color: $color-tip-bg
-  border-color: $color-tip-border
-  color: $color-tip
-
-span.warning
-  background-color: $color-warning-bg
-  border-color: $color-warning-border
-  color: $color-warning
-
-span.danger
-  background-color: $color-danger-bg
-  border-color: $color-danger-border
-  color: $color-danger
-
-span.mark
-  background-color: yellow
-  color: black
+span
+  &.mark
+    background-color: yellow
+    color: black
+  &.tip, &.warning, &.danger
+    margin: 0 0.1em
+    padding: 0 0.1em
+    border-bottom-width: 1px
+    border-bottom-style: solid
+  &.tip
+    background-color: $color-tip-bg
+    border-color: $color-tip-border
+    color: $color-tip
+  &.warning
+    background-color: $color-warning-bg
+    border-color: $color-warning-border
+    color: $color-warning
+  &.danger
+    background-color: $color-danger-bg
+    border-color: $color-danger-border
+    color: $color-danger
 
 /* 标签样式，monokai配色。 */
-div.document-tag span.tag
-  display: inline-block
-  border: 2px solid
-  border-radius: 1em
-  padding: 0.1em 0.5em
-  margin: 0.2em 0.3em
-  text-indent: 0
-  color: black
-  &:nth-child(6n+1)
-    background-color: $color-red
-    border-color: darken($color-red, 30%)
-  &:nth-child(6n+2)
-    background-color: $color-orange
-    border-color: darken($color-orange, 30%)
-  &:nth-child(6n+3)
-    background-color: $color-yellow
-    border-color: darken($color-yellow, 30%)
-  &:nth-child(6n+4)
-    background-color: $color-green
-    border-color: darken($color-green, 30%)
-  &:nth-child(6n+5)
-    background-color: $color-blue
-    border-color: darken($color-blue, 30%)
-  &:nth-child(6n+6)
-    background-color: $color-violet
-    border-color: darken($color-violet, 30%)
+div.document-tag
+  span.tag
+    display: inline-block
+    border: 2px solid
+    border-radius: 1em
+    padding: 0.1em 0.5em
+    margin: 0.2em 0.3em
+    text-indent: 0
+    color: black
+    &:nth-child(6n+1)
+      background-color: $color-red
+      border-color: darken($color-red, 30%)
+    &:nth-child(6n+2)
+      background-color: $color-orange
+      border-color: darken($color-orange, 30%)
+    &:nth-child(6n+3)
+      background-color: $color-yellow
+      border-color: darken($color-yellow, 30%)
+    &:nth-child(6n+4)
+      background-color: $color-green
+      border-color: darken($color-green, 30%)
+    &:nth-child(6n+5)
+      background-color: $color-blue
+      border-color: darken($color-blue, 30%)
+    &:nth-child(6n+6)
+      background-color: $color-violet
+      border-color: darken($color-violet, 30%)
 
-/* 特殊彩色块 */
-div.custom-box
-  display: block
-  border: 1px solid
-  box-shadow: 5px 5px 5px $color-softdark
-  padding: .1rem 1.5rem
-  margin: 1rem 5px
-div.red
-  background-color: $color-red
-  border-color: darken($color-red, 30%)
-  color: black
-div.orange
-  background-color: $color-orange
-  border-color: darken($color-orange, 30%)
-  color: black
-div.yellow
-  background-color: $color-yellow
-  border-color: darken($color-yellow, 30%)
-  color: black
-div.green
-  background-color: $color-green
-  border-color: darken($color-green, 30%)
-  color: black
-div.blue
-  background-color: $color-blue
-  border-color: darken($color-blue, 30%)
-  color: black
-div.violet
-  background-color: $color-violet
-  border-color: darken($color-violet, 30%)
-  color: black
