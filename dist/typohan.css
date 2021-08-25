@@ -359,19 +359,17 @@ header {
   color: #282828;
   font-weight: bold;
 }
+header p.title,
+header p.subtitle,
+header p.author,
+header p.date {
+  text-align: center;
+}
 header p.title {
   font-size: 200%;
-  text-align: center;
 }
 header p.subtitle {
   font-size: 130%;
-  text-align: center;
-}
-header p.author {
-  text-align: center;
-}
-header p.date {
-  text-align: center;
 }
 @media print {
   html {
@@ -416,6 +414,43 @@ div.danger {
   border-color: #c00;
   color: #4d0000;
 }
+div.red,
+div.orange,
+div.yellow,
+div.green,
+div.blue,
+div.violet {
+  display: block;
+  border: 1px solid;
+  box-shadow: 5px 5px 5px #5c5c5c;
+  padding: 0.1rem 1.5rem;
+  margin: 1rem 5px;
+  color: #000;
+}
+div.red {
+  background-color: #ff6188;
+  border-color: #f6003d;
+}
+div.orange {
+  background-color: #fc9867;
+  border-color: #f45305;
+}
+div.yellow {
+  background-color: #ffd866;
+  border-color: #faba00;
+}
+div.green {
+  background-color: #a9dc76;
+  border-color: #76bc30;
+}
+div.blue {
+  background-color: #78dce8;
+  border-color: #24c0d3;
+}
+div.violet {
+  background-color: #ab9df2;
+  border-color: #5033e4;
+}
 div.output {
   display: block;
   padding: 0.1rem 1.5rem;
@@ -423,6 +458,10 @@ div.output {
   border-radius: 5px;
   margin: 1rem 0;
   background-color: #f0f0f0;
+}
+span.mark {
+  background-color: #ff0;
+  color: #000;
 }
 span.tip,
 span.warning,
@@ -447,9 +486,39 @@ span.danger {
   border-color: #c00;
   color: #4d0000;
 }
-span.mark {
-  background-color: #ff0;
-  color: #000;
+span.red,
+span.orange,
+span.yellow,
+span.green,
+span.blue,
+span.violet {
+  margin: 0 0.1em;
+  padding: 0;
+  color: #333;
+}
+span.red {
+  background-color: #ff6188;
+  border-color: #f6003d;
+}
+span.orange {
+  background-color: #fc9867;
+  border-color: #f45305;
+}
+span.yellow {
+  background-color: #ffd866;
+  border-color: #faba00;
+}
+span.green {
+  background-color: #a9dc76;
+  border-color: #76bc30;
+}
+span.blue {
+  background-color: #78dce8;
+  border-color: #24c0d3;
+}
+span.violet {
+  background-color: #ab9df2;
+  border-color: #5033e4;
 }
 /* 标签样式，monokai配色。 */
 div.document-tag span.tag {
@@ -459,7 +528,7 @@ div.document-tag span.tag {
   padding: 0.1em 0.5em;
   margin: 0.2em 0.3em;
   text-indent: 0;
-  color: #000;
+  color: #333;
 }
 div.document-tag span.tag:nth-child(6n+1) {
   background-color: #ff6188;
@@ -484,42 +553,4 @@ div.document-tag span.tag:nth-child(6n+5) {
 div.document-tag span.tag:nth-child(6n+6) {
   background-color: #ab9df2;
   border-color: #5033e4;
-}
-/* 特殊彩色块 */
-div.custom-box {
-  display: block;
-  border: 1px solid;
-  box-shadow: 5px 5px 5px #5c5c5c;
-  padding: 0.1rem 1.5rem;
-  margin: 1rem 5px;
-}
-div.red {
-  background-color: #ff6188;
-  border-color: #f6003d;
-  color: #000;
-}
-div.orange {
-  background-color: #fc9867;
-  border-color: #f45305;
-  color: #000;
-}
-div.yellow {
-  background-color: #ffd866;
-  border-color: #faba00;
-  color: #000;
-}
-div.green {
-  background-color: #a9dc76;
-  border-color: #76bc30;
-  color: #000;
-}
-div.blue {
-  background-color: #78dce8;
-  border-color: #24c0d3;
-  color: #000;
-}
-div.violet {
-  background-color: #ab9df2;
-  border-color: #5033e4;
-  color: #000;
 }
