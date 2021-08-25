@@ -32,6 +32,26 @@ $color-fg = $color-softdark
 
 $color-cyan =  #478FB1
 
+/* 参考 vuepress */
+$color-tip-bg = #e2f4e9
+$color-tip-border = #42b983
+$color-tip = #285941
+$color-warning-bg = rgba(255,229,100,.3)
+$color-warning-border = #e7c000
+$color-warning = #6b5900
+$color-danger-bg = #ffe6e6
+$color-danger-border = #c00
+$color-danger = #4d0000
+
+/* 参考 monokai pro */
+$color-red = #ff6188
+$color-orange = #fc9867
+$color-yellow = #ffd866
+$color-green = #a9dc76
+$color-blue = #78dce8
+$color-violet = #ab9df2
+
+
 moz-webkit(x, args...)
   -moz-{x}: args
   -webkit-{x}: args
@@ -354,19 +374,19 @@ div.tip, div.warning, div.danger
   margin: 1rem 0
 
 div.tip
-  background-color: #e2f4e9
-  border-color: #42b983
-  color: #285941
+  background-color: $color-tip-bg
+  border-color: $color-tip-border
+  color: $color-tip
 
 div.warning
-  background-color: rgba(255,229,100,.3)
-  border-color: #e7c000
-  color: #6b5900
+  background-color: $color-warning-bg
+  border-color: $color-warning-border
+  color: $color-warning
 
 div.danger
-  background-color: #ffe6e6
-  border-color: #c00
-  color: #4d0000
+  background-color: $color-danger-bg
+  border-color: $color-danger-border
+  color: $color-danger
 
 div.output
   display: block
@@ -383,19 +403,19 @@ span.tip, span.warning, span.danger
   border-bottom-style: solid
 
 span.tip
-  background-color: #e2f4e9
-  border-color: #42b983
-  color: #285941
+  background-color: $color-tip-bg
+  border-color: $color-tip-border
+  color: $color-tip
 
 span.warning
-  background-color: rgba(255,229,100,.3)
-  border-color: #e7c000
-  color: #6b5900
+  background-color: $color-warning-bg
+  border-color: $color-warning-border
+  color: $color-warning
 
 span.danger
-  background-color: #ffe6e6
-  border-color: #c00
-  color: #4d0000
+  background-color: $color-danger-bg
+  border-color: $color-danger-border
+  color: $color-danger
 
 span.mark
   background-color: yellow
@@ -411,20 +431,52 @@ div.document-tag span.tag
   text-indent: 0
   color: black
   &:nth-child(6n+1)
-    background-color: #ff6188
-    border-color: darken(#ff6188, 30%)
+    background-color: $color-red
+    border-color: darken($color-red, 30%)
   &:nth-child(6n+2)
-    background-color: #fc9867
-    border-color: darken(#fc9867, 30%)
+    background-color: $color-orange
+    border-color: darken($color-orange, 30%)
   &:nth-child(6n+3)
-    background-color: #ffd866
-    border-color: darken(#ffd866, 30%)
+    background-color: $color-yellow
+    border-color: darken($color-yellow, 30%)
   &:nth-child(6n+4)
-    background-color: #a9dc76
-    border-color: darken(#a9dc76, 30%)
+    background-color: $color-green
+    border-color: darken($color-green, 30%)
   &:nth-child(6n+5)
-    background-color: #78dce8
-    border-color: darken(#78dce8, 30%)
+    background-color: $color-blue
+    border-color: darken($color-blue, 30%)
   &:nth-child(6n+6)
-    background-color: #ab9df2
-    border-color: darken(#ab9df2, 30%)
+    background-color: $color-violet
+    border-color: darken($color-violet, 30%)
+
+/* 特殊彩色块 */
+div.custom-box
+  display: block
+  border: 1px solid
+  box-shadow: 5px 5px 5px $color-softdark
+  padding: .1rem 1.5rem
+  margin: 1rem 5px
+div.red
+  background-color: $color-red
+  border-color: darken($color-red, 30%)
+  color: black
+div.orange
+  background-color: $color-orange
+  border-color: darken($color-orange, 30%)
+  color: black
+div.yellow
+  background-color: $color-yellow
+  border-color: darken($color-yellow, 30%)
+  color: black
+div.green
+  background-color: $color-green
+  border-color: darken($color-green, 30%)
+  color: black
+div.blue
+  background-color: $color-blue
+  border-color: darken($color-blue, 30%)
+  color: black
+div.violet
+  background-color: $color-violet
+  border-color: darken($color-violet, 30%)
+  color: black
