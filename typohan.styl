@@ -437,6 +437,28 @@ span
     background-color: $color-danger-bg
     border-color: $color-danger-border
     color: $color-danger
+  &.red, &.orange, &.yellow, &.green, &.blue, &.violet
+    margin: 0 0.1em
+    padding: 0
+    color: $color-dark
+  &.red
+    background-color: $color-red
+    border-color: darken($color-red, 30%)
+  &.orange
+    background-color: $color-orange
+    border-color: darken($color-orange, 30%)
+  &.yellow
+    background-color: $color-yellow
+    border-color: darken($color-yellow, 30%)
+  &.green
+    background-color: $color-green
+    border-color: darken($color-green, 30%)
+  &.blue
+    background-color: $color-blue
+    border-color: darken($color-blue, 30%)
+  &.violet
+    background-color: $color-violet
+    border-color: darken($color-violet, 30%)
 
 /* 标签样式，monokai配色。 */
 div.document-tag
@@ -447,7 +469,7 @@ div.document-tag
     padding: 0.1em 0.5em
     margin: 0.2em 0.3em
     text-indent: 0
-    color: black
+    color: $color-dark
     &:nth-child(6n+1)
       background-color: $color-red
       border-color: darken($color-red, 30%)
