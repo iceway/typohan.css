@@ -1,5 +1,7 @@
 .PHONY: all
 
-all:
+all: typohan.styl
 	stylus -o dist typohan.styl
-	# pandoc -o dist/test.md.html dist/test.md
+
+sample: dist/test.md.html
+	pandoc -o dist/test.md.html dist/test.md
