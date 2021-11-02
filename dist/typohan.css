@@ -4,7 +4,6 @@
 	https://zenozeng.github.io/fonts.css/
   中文字体中宋体可能更像英文意义上的衬线体，这里用楷体只是觉得显示效果更好。
 */
-/* 三大操作系统默认字体 */
 /* 参考 vuepress */
 /* 参考 monokai pro */
 * {
@@ -15,7 +14,7 @@
 html {
   color: #5c5c5c;
   background-color: #f8f8f8;
-  font: 17.6px/1.3em "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  font: 17.6px/1.3em "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans SC", "Source Han Sans CN", "Source Han Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   -moz-font-size-adjust: 100%;
   -webkit-font-size-adjust: 100%;
   font-size-adjust: 100%;
@@ -136,14 +135,14 @@ button,
 input,
 select,
 textarea {
-  font: normal 1em/1.5em "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  font: normal 1em/1.5em "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans SC", "Source Han Sans CN", "Source Han Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
 table {
   width: 100%;
   border-collapse: collapse;
   page-break-inside: avoid;
-  font: normal 0.9em/1em "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  font: normal 0.9em/1em "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans SC", "Source Han Sans CN", "Source Han Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   border: 2px solid #5c5c5c;
   display: table;
   margin: auto;
@@ -166,7 +165,7 @@ table caption {
 }
 /* 块及段落引用 */
 blockquote {
-  font: normal 1em/1.5em "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+  font: normal 1em/1.5em "LXGW WenKai", "霞鹜文楷", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif SC", "Source Han Serif CN", "Source Han Serif", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
   color: #6c6c6c;
   background: #f0f0f0;
   border-left: 3px solid #dcdcdc;
@@ -228,7 +227,7 @@ caption,
 cite,
 dfn,
 var {
-  font: normal "Sarasa Mono SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  font: normal "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
 }
 /* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highlight.js或者prism.js */
 pre {
@@ -242,13 +241,13 @@ pre {
   white-space: pre;
 }
 pre > code {
-  font-family: "Sarasa Mono SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
   background: none;
   margin: 0;
   padding: 0;
 }
 :not(pre) > code {
-  font-family: "Sarasa Mono SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
   font-size: 0.8em;
   background: #f0f0f0;
   margin: 0 0.2em;
@@ -277,7 +276,7 @@ q:after {
 /* 键盘按键, https://github.com/auth0/kbd/blob/gh-pages/kbd.css */
 kbd {
   background-color: #f0f0f0;
-  font-family: "Sarasa Mono SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
   display: inline-block;
   border-radius: 3px;
   padding: 0px 4px;
