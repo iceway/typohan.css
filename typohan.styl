@@ -8,18 +8,20 @@ $font-size = 17.6px
   中文字体中宋体可能更像英文意义上的衬线体，这里用楷体只是觉得显示效果更好。
 */
 
-/* 三大操作系统默认字体 */
-//$font-sans-en = Helvetica, Arial, "Liberation Sans"
-$font-sans-cn = "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei"
-//$font-serif-en = Baskerville, Georgia, "Liberation Serif"
-$font-serif-cn = "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "Noto Serif CJK SC", "Source Han Serif SC"
-$font-mono = Consolas, Inconsolata
+$font-siyuan-heiti = "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans SC", "Source Han Sans CN", "Source Han Sans"
+$font-siyuan-songti = "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif SC", "Source Han Serif CN", "Source Han Serif"
+$font-xiawu-kaiti = "LXGW WenKai", "霞鹜文楷"
 
-$font-mono-custom = "Sarasa Mono SC", "Source Code Pro"
+// $font-sans-en = Helvetica, Arial, "Liberation Sans"
+$font-heiti = $font-siyuan-heiti, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei"
+// $font-serif-en = Baskerville, Georgia, "Liberation Serif"
+$font-songti = $font-siyuan-songti, "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW"
+$font-kaiti = $font-xiawu-kaiti, "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW"
+$font-dengkuan = "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata
 
-$font-main = $font-sans-cn, sans-serif
-$font-serif = $font-serif-cn, serif
-$font-mono = $font-mono-custom, $font-mono, monospace
+$font-main = $font-heiti, sans-serif
+$font-serif = $font-kaiti, $font-songti, serif
+$font-mono = $font-dengkuan, monospace
 
 $color-light = #f8f8f8
 $color-softlight = #f0f0f0
