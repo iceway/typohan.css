@@ -36,19 +36,19 @@ h6 {
   font-weight: bold;
 }
 h1 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 h2 {
-  font-size: 1.8em;
-}
-h3 {
-  font-size: 1.6em;
-}
-h4 {
   font-size: 1.4em;
 }
-h5 {
+h3 {
+  font-size: 1.3em;
+}
+h4 {
   font-size: 1.2em;
+}
+h5 {
+  font-size: 1.1em;
 }
 h6 {
   font-size: 1em;
@@ -168,10 +168,10 @@ blockquote {
   font: normal 1em/1.5em "LXGW WenKai", "霞鹜文楷", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif SC", "Source Han Serif CN", "Source Han Serif", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
   color: #6c6c6c;
   background: #f0f0f0;
-  border-left: 3px solid #dcdcdc;
+  border-left: 8px solid #dcdcdc;
   position: relative;
   margin: 1em 0;
-  padding: 0 1em;
+  padding: 0.2em 1em;
 }
 /* 不推荐在中文环境使用<i>标签强调某些内容，中文没有斜体字，而英文手写本来就是斜体字。 */
 i {
