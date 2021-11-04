@@ -34,7 +34,7 @@ $color-fg = $color-softdark
 
 $color-cyan =  #478FB1
 
-/* 参考 vuepress */
+/* 配色：参考 vuepress */
 $color-tip-bg = #e2f4e9
 $color-tip-border = #42b983
 $color-tip = #285941
@@ -45,7 +45,7 @@ $color-danger-bg = #ffe6e6
 $color-danger-border = #c00
 $color-danger = #4d0000
 
-/* 参考 monokai pro */
+/* 配色：参考 monokai pro */
 $color-red = #ff6188
 $color-orange = #fc9867
 $color-yellow = #ffd866
@@ -58,6 +58,8 @@ moz-webkit(x, args...)
   -moz-{x}: args
   -webkit-{x}: args
   {x}: args
+
+
 
 *
   margin: 0
@@ -82,6 +84,7 @@ h1, h2, h3, h4, h5, h6
   font-weight: bold
 h1
   font-size: 1.5em
+  string-set: heading content()
 h2
   font-size: 1.4em
 h3
@@ -121,11 +124,6 @@ ul, ol
   &.none-list
     list-style: none
 
-#table-of-content+ul
-  list-style: none
-  ul
-    list-style: none
-
 /* HTML5标签默认显示为块 */
 article, aside, details, figcaption, figure, footer,
 header, main, menu, nav, section, summary
@@ -163,6 +161,7 @@ table
   border: 2px solid $color-softdark
   display: table
   margin: auto
+  line-height: normal
   tr, th, td
     border: 1px solid lighten($color-fg, 50%)
     padding: 0.5em 1em
@@ -230,28 +229,25 @@ a
 
 /* 地址，变量等使用等宽字体 */
 address, caption, cite, dfn, var
-  font: normal $font-mono
+  font: normal 0.9em/1em $font-mono
 
 /* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highlight.js或者prism.js */
 pre
-  font-size: 0.8em
   background: $color-softlight
   margin: 1em 0
   padding: 1em
-  //border: 1px solid $color-softdark
-  //border-radius: 5px
   display: block
   overflow-x: auto
   word-wrap: normal
   white-space: pre
+  font-size: 0.8em !important
   & > code
-    font-family: $font-mono
+    font-family: $font-mono !important
     background: none
     margin: 0
     padding: 0
   :not(&) > code
-    font-family: $font-mono
-    font-size: 0.8em
+    font-family: $font-mono !important
     background: $color-softlight
     margin: 0 0.2em
     padding: 0.1em 0.3em
@@ -287,6 +283,8 @@ kbd
   cursor: pointer
   font-weight: bold
   letter-spacing: 1px
+
+
 
 /* ===特定类样式=== */
 /* 传统中文样式：段落首行缩进，强调使用字体底部加着重号的方式等。 */
@@ -339,31 +337,7 @@ kbd
     &:before
       content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0"
 
-/* 独立封面，<header>标签中的特定类段落。*/
-header
-  color: $color-harddark
-  font-weight: bold
-  p
-    &.title, &.subtitle, &.author, &.date
-      text-align: center
-    &.title
-      font-size: 200%
-    &.subtitle
-      font-size: 130%
 
-@media print
-  html
-    background-color: white
-  header
-    page-break-after: always
-  h1
-    /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
-       这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
-     */
-    page-break-before: always
-  div.document-tag
-    page-break-before: always
-    page-break-after: always
 
 /* 自定义 div 和 span 样式，参考 vuepress */
 div
@@ -492,3 +466,85 @@ div.document-tag
       background-color: $color-violet
       border-color: darken($color-violet, 30%)
 
+
+
+/* 独立封面 */
+#cover
+  color: $color-harddark
+  font-weight: bold
+  p
+    text-align: center
+    &.title
+      font-size: 160%
+    &.subtitle
+      font-size: 120%
+
+/* 目录样式 */
+#toc
+  ul
+    list-style: none
+    li a
+      border: 0
+
+
+
+@page
+  margin: 2cm
+  size: A4 portrait
+  counter-increment: page
+  @top-left
+    content: string(heading)
+    font-size: 12px
+    height: 1cm
+    vertical-align: middle
+    width: 100%
+
+  @top-center
+    content: ''
+    display: block
+    height: .05cm
+    opacity: .5
+    width: 100%
+    margin-bottom: 5px
+    border-bottom: 1px solid $color-softdark
+
+  @top-right
+    content: counter(page)
+    font-size: 10px
+    height: 1cm
+    text-align: right
+    width: 100%
+
+
+@page blank
+  @top-left
+    background: none
+    content: none
+  @top-center
+    content: none
+  @top-right
+    content: none
+
+@media print
+  html
+    background-color: white
+  #cover
+    page-break-after: always
+    page: blank
+    div.title
+      margin: 6cm 0 2cm 0
+    div.meta
+      margin: 2cm 0 1cm 0
+  #toc
+    page-break-after: always
+    page: blank
+    ul li a
+      &::after
+        content: target-counter(attr(href), page)
+        float: right
+  #content
+    h1
+      /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
+       这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
+       */
+      page-break-before: always
