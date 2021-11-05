@@ -4,8 +4,8 @@
 	https://zenozeng.github.io/fonts.css/
   中文字体中宋体可能更像英文意义上的衬线体，这里用楷体只是觉得显示效果更好。
 */
-/* 参考 vuepress */
-/* 参考 monokai pro */
+/* 配色：参考 vuepress */
+/* 配色：参考 monokai pro */
 * {
   margin: 0;
   padding: 0;
@@ -37,6 +37,7 @@ h6 {
 }
 h1 {
   font-size: 1.5em;
+  string-set: heading content();
 }
 h2 {
   font-size: 1.4em;
@@ -86,12 +87,6 @@ ol blockquote {
 }
 ul.none-list,
 ol.none-list {
-  list-style: none;
-}
-#table-of-content+ul {
-  list-style: none;
-}
-#table-of-content+ul ul {
   list-style: none;
 }
 /* HTML5标签默认显示为块 */
@@ -146,6 +141,7 @@ table {
   border: 2px solid #5c5c5c;
   display: table;
   margin: auto;
+  line-height: normal;
 }
 table tr,
 table th,
@@ -227,11 +223,10 @@ caption,
 cite,
 dfn,
 var {
-  font: normal "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  font: normal 0.9em/1em "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
 }
 /* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highlight.js或者prism.js */
 pre {
-  font-size: 0.8em;
   background: #f0f0f0;
   margin: 1em 0;
   padding: 1em;
@@ -239,16 +234,16 @@ pre {
   overflow-x: auto;
   word-wrap: normal;
   white-space: pre;
+  font-size: 0.8em !important;
 }
 pre > code {
-  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace !important;
   background: none;
   margin: 0;
   padding: 0;
 }
 :not(pre) > code {
-  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
-  font-size: 0.8em;
+  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace !important;
   background: #f0f0f0;
   margin: 0 0.2em;
   padding: 0.1em 0.3em;
@@ -353,41 +348,6 @@ kbd {
 }
 .counter h6:before {
   content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
-}
-/* 独立封面，<header>标签中的特定类段落。*/
-header {
-  color: #282828;
-  font-weight: bold;
-}
-header p.title,
-header p.subtitle,
-header p.author,
-header p.date {
-  text-align: center;
-}
-header p.title {
-  font-size: 200%;
-}
-header p.subtitle {
-  font-size: 130%;
-}
-@media print {
-  html {
-    background-color: #fff;
-  }
-  header {
-    page-break-after: always;
-  }
-  h1 {
-/* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
-       这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
-     */
-    page-break-before: always;
-  }
-  div.document-tag {
-    page-break-before: always;
-    page-break-after: always;
-  }
 }
 /* 自定义 div 和 span 样式，参考 vuepress */
 div.tip,
@@ -553,4 +513,94 @@ div.document-tag span.tag:nth-child(6n+5) {
 div.document-tag span.tag:nth-child(6n+6) {
   background-color: #ab9df2;
   border-color: #5033e4;
+}
+/* 独立封面 */
+#cover {
+  color: #282828;
+  font-weight: bold;
+}
+#cover p {
+  text-align: center;
+}
+#cover p.title {
+  font-size: 160%;
+}
+#cover p.subtitle {
+  font-size: 120%;
+}
+/* 目录样式 */
+#toc ul {
+  list-style: none;
+}
+#toc ul li a {
+  border: 0;
+}
+@page {
+  margin: 2cm;
+  size: A4 portrait;
+  counter-increment: page;
+  @top-left {
+    content: string(heading);
+    font-size: 12px;
+    height: 1cm;
+    vertical-align: middle;
+    width: 100%;
+  }
+  @top-center {
+    content: '';
+    display: block;
+    height: 0.05cm;
+    opacity: 0.5;
+    width: 100%;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #5c5c5c;
+  }
+  @top-right {
+    content: counter(page);
+    font-size: 10px;
+    height: 1cm;
+    text-align: right;
+    width: 100%;
+  }
+}
+@page blank {
+  @top-left {
+    background: none;
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+}
+@media print {
+  html {
+    background-color: #fff;
+  }
+  #cover {
+    page-break-after: always;
+    page: blank;
+  }
+  #cover div.title {
+    margin: 6cm 0 2cm 0;
+  }
+  #cover div.meta {
+    margin: 2cm 0 1cm 0;
+  }
+  #toc {
+    page-break-after: always;
+    page: blank;
+  }
+  #toc ul li a::after {
+    content: target-counter(attr(href), page);
+    float: right;
+  }
+  #content h1 {
+/* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
+       这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
+       */
+    page-break-before: always;
+  }
 }
