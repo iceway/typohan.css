@@ -44,6 +44,9 @@ $color-warning = #6b5900
 $color-danger-bg = #ffe6e6
 $color-danger-border = #c00
 $color-danger = #4d0000
+$color-info-bg = #e7f3fe
+$color-info-border = #2196F3
+$color-info = #234972
 
 /* 配色：参考 monokai pro */
 $color-red = #ff6188
@@ -341,7 +344,7 @@ kbd
 
 /* 自定义 div 和 span 样式，参考 vuepress */
 div
-  &.tip, &.warning, &.danger
+  &.tip, &.warning, &.danger, &.info
     display: block
     padding: .1rem 1.5rem
     border-left-width: .5rem
@@ -359,6 +362,10 @@ div
     background-color: $color-danger-bg
     border-color: $color-danger-border
     color: $color-danger
+  &.info
+    background-color: $color-info-bg
+    border-color: $color-info-border
+    color: $color-info
   &.red, &.orange, &.yellow, &.green, &.blue, &.violet
     display: block
     border: 1px solid
@@ -408,7 +415,7 @@ span
   &.mark
     background-color: yellow
     color: black
-  &.tip, &.warning, &.danger
+  &.tip, &.warning, &.danger, &.info
     margin: 0 0.1em
     padding: 0 0.1em
     border-bottom-width: 1px
@@ -425,6 +432,10 @@ span
     background-color: $color-danger-bg
     border-color: $color-danger-border
     color: $color-danger
+  &.info
+    background-color: $color-info-bg
+    border-color: $color-info-border
+    color: $color-info
   &.red, &.orange, &.yellow, &.green, &.blue, &.violet
     margin: 0 0.1em
     padding: 0
