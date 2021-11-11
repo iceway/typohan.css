@@ -212,7 +212,7 @@ a {
   color: #478fb1;
   background-color: transparent;
   text-decoration: none;
-  border-bottom: 1px solid #478fb1;
+  border-bottom: 1px dashed #478fb1;
 }
 a:hover {
   border-bottom-color: #a2c8d9;
@@ -352,7 +352,8 @@ kbd {
 /* 自定义 div 和 span 样式，参考 vuepress */
 div.tip,
 div.warning,
-div.danger {
+div.danger,
+div.info {
   display: block;
   padding: 0.1rem 1.5rem;
   border-left-width: 0.5rem;
@@ -374,6 +375,11 @@ div.danger {
   border-color: #c00;
   color: #4d0000;
 }
+div.info {
+  background-color: #e7f3fe;
+  border-color: #2196f3;
+  color: #234972;
+}
 div.red,
 div.orange,
 div.yellow,
@@ -382,7 +388,6 @@ div.blue,
 div.violet {
   display: block;
   border: 1px solid;
-  box-shadow: 5px 5px 5px #5c5c5c;
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
   color: #000;
@@ -416,7 +421,7 @@ div.output {
   border: 3px solid #f0f0f0;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  margin: 1rem 0.2rem;
+  margin: 1rem 0;
   padding: 0 15px;
 }
 div.output::before {
@@ -437,7 +442,8 @@ span.mark {
 }
 span.tip,
 span.warning,
-span.danger {
+span.danger,
+span.info {
   margin: 0 0.1em;
   padding: 0 0.1em;
   border-bottom-width: 1px;
@@ -457,6 +463,11 @@ span.danger {
   background-color: #ffe6e6;
   border-color: #c00;
   color: #4d0000;
+}
+span.info {
+  background-color: #e7f3fe;
+  border-color: #2196f3;
+  color: #234972;
 }
 span.red,
 span.orange,
