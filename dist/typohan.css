@@ -305,6 +305,15 @@ kbd {
   padding-bottom: calc(0px);
 }
 /* 标题前面自动加章节号 */
+.counter h1:before,
+.counter h2:before,
+.counter h3:before,
+.counter h4:before,
+.counter h5:before,
+.counter h6:before {
+  display: inline-block;
+  margin-right: 0.5em;
+}
 .counter body {
   counter-reset: h1counter;
 }
@@ -313,41 +322,41 @@ kbd {
   counter-increment: h1counter;
 }
 .counter h1:before {
-  content: counter(h1counter) ".\0000a0\0000a0";
+  content: counter(h1counter) ".";
 }
 .counter h2 {
   counter-reset: h3counter;
   counter-increment: h2counter;
 }
 .counter h2:before {
-  content: counter(h1counter) "." counter(h2counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) ".";
 }
 .counter h3 {
   counter-reset: h4counter;
   counter-increment: h3counter;
 }
 .counter h3:before {
-  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".";
 }
 .counter h4 {
   counter-reset: h5counter;
   counter-increment: h4counter;
 }
 .counter h4:before {
-  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".";
 }
 .counter h5 {
   counter-reset: h6counter;
   counter-increment: h5counter;
 }
 .counter h5:before {
-  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".";
 }
 .counter h6 {
   counter-increment: h6counter;
 }
 .counter h6:before {
-  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".";
 }
 /* 自定义 div 和 span 样式，参考 vuepress */
 div.tip,
