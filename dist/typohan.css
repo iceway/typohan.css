@@ -136,7 +136,7 @@ textarea {
 table {
   width: 100%;
   border-collapse: collapse;
-  page-break-inside: avoid;
+/* page-break-inside: avoid */
   font: normal 0.9em/1em "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   border: 2px solid #5c5c5c;
   display: table;
