@@ -115,7 +115,7 @@ img {
   max-width: 98%;
   display: block;
   margin: 1em auto;
-  box-shadow: 5px 5px 5px #5c5c5c;
+/*box-shadow: 5px 5px 5px $color-softdark*/
 }
 figure {
   margin: 1em 0 2em 0;
