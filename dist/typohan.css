@@ -426,6 +426,7 @@ div.violet {
   border-color: #5033e4;
 }
 div.output {
+  background-color: #f8f8f8;
   display: block;
   border: 3px solid #f0f0f0;
   border-top-left-radius: 8px;
