@@ -156,8 +156,9 @@ table th {
 }
 table caption {
   text-align: center;
-  font-weight: bold;
-  padding: 0.5em;
+  font-style: italic;
+  font-size: 1rem;
+  margin: 1em 0;
 }
 /* 块及段落引用 */
 blockquote {
@@ -219,7 +220,6 @@ a:hover {
 }
 /* 地址，变量等使用等宽字体 */
 address,
-caption,
 cite,
 dfn,
 var {
