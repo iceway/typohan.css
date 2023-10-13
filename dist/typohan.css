@@ -234,7 +234,6 @@ pre {
   overflow-x: auto;
   word-wrap: normal;
   white-space: pre;
-  font-size: 0.8em !important;
 }
 pre > code {
   font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace !important;
