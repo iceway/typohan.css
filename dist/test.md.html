@@ -81,13 +81,9 @@
 </blockquote>
 <h3 id="引用区块中的引用区块">引用区块中的引用区块</h3>
 <blockquote>
-<p>
-话说天下大势，分久必合，合久必分。周末七国分争，并入于秦。及秦灭之后，楚、汉分争，又并入于汉。汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。推其致乱之由，殆始于桓、灵二帝。桓帝禁锢善类，崇信宦官。及桓帝崩，灵帝即位，大将军窦武、太傅陈蕃共相辅佐。时有宦官曹节等弄权，窦武、陈蕃谋诛之，机事不密，反为所害，中涓自此愈横。
-</p>
+<p>话说天下大势，分久必合，合久必分。周末七国分争，并入于秦。及秦灭之后，楚、汉分争，又并入于汉。汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。推其致乱之由，殆始于桓、灵二帝。桓帝禁锢善类，崇信宦官。及桓帝崩，灵帝即位，大将军窦武、太傅陈蕃共相辅佐。时有宦官曹节等弄权，窦武、陈蕃谋诛之，机事不密，反为所害，中涓自此愈横。</p>
 <blockquote>
-<p>
-滚滚长江东逝水，浪花淘尽英雄。是非成败转头空。青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢。古今多少事，都付笑谈中。
-</p>
+<p>滚滚长江东逝水，浪花淘尽英雄。是非成败转头空。青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢。古今多少事，都付笑谈中。</p>
 </blockquote>
 </blockquote>
 <h2 id="预处理格式区块">预处理格式区块</h2>
@@ -230,6 +226,112 @@ static struct ifreq *get_ifreq(char *ifname, unsigned int cmd)
 <div class="document-tag">
 <p><span class="tag">html</span> <span class="tag">css</span> <span class="tag">typo</span> <span class="tag">style</span> <span class="tag">document style</span> <span class="tag">chinese</span> <span class="tag">markdown</span> <span class="tag">pandoc</span> <span class="tag">VS Code</span> <span class="tag">MPE</span> <span class="tag">obsidian</span> <span class="tag">wkhtmltopdf</span> <span class="tag">draw.io</span> <span class="tag">xmind</span></p>
 </div>
+<h2 id="pandoc_ext" class="pandoc_ext pandoc" name="pandoc">pandoc 支持的扩展</h2>
+<p>参考标题引用部分自动 ID<a href="#自定义标签">自定义标签</a>以及<a href="#pandoc_ext">指定 ID</a>。</p>
+<h3 id="不编号的标题" class="unnumbered unlisted">不编号的标题</h3>
+<h3 id="代码区块code-block">代码区块/Code block</h3>
+<div class="sourceCode" id="cb2" data-startFrom="150"><pre class="sourceCode numberSource language-c numberLines"><code class="sourceCode"><a class="sourceLine" id="cb2-150" title="150">/* ifname:      like &quot;eth0&quot;, &quot;br0&quot; and etc.</a>
+<a class="sourceLine" id="cb2-151" title="151"> * cmd:         SIOCGIFADDR, SIOCGIFDSTADDR, SIOCGIFHWADDR</a>
+<a class="sourceLine" id="cb2-152" title="152"> *              SIOCGIFNETMASK, SIOCGIFBRDADDR</a>
+<a class="sourceLine" id="cb2-153" title="153"> */</a>
+<a class="sourceLine" id="cb2-154" title="154">static struct ifreq *get_ifreq(char *ifname, unsigned int cmd)</a>
+<a class="sourceLine" id="cb2-155" title="155">{</a>
+<a class="sourceLine" id="cb2-156" title="156">        static struct ifreq ifr;</a>
+<a class="sourceLine" id="cb2-157" title="157">        bzero(&amp;ifr, sizeof(ifr));</a>
+<a class="sourceLine" id="cb2-158" title="158"></a>
+<a class="sourceLine" id="cb2-159" title="159">        int fd = socket(AF_INET, SOCK_RAW, IPPROTO_RAW);</a>
+<a class="sourceLine" id="cb2-160" title="160">        if (fd &lt; 0) {</a>
+<a class="sourceLine" id="cb2-161" title="161">                printf(&quot;socket error!&quot;);</a>
+<a class="sourceLine" id="cb2-162" title="162">        } else {</a>
+<a class="sourceLine" id="cb2-163" title="163">                strncpy(ifr.ifr_name, ifname, IFNAMSIZ);</a>
+<a class="sourceLine" id="cb2-164" title="164">                ioctl(fd, cmd, &amp;ifr);</a>
+<a class="sourceLine" id="cb2-165" title="165">                close(fd);</a>
+<a class="sourceLine" id="cb2-166" title="166">        }</a>
+<a class="sourceLine" id="cb2-167" title="167"></a>
+<a class="sourceLine" id="cb2-168" title="168">        return &amp;ifr;</a>
+<a class="sourceLine" id="cb2-169" title="169">}</a></code></pre></div>
+<h3 id="行块line-blocks">行块/Line blocks</h3>
+<p>不会自动将多行合并成一行内容。</p>
+<div class="line-block">如果有来生<br />
+要做一棵树<br />
+站成永恒<br />
+没有悲欢的姿势<br />
+一半在土里安详<br />
+一半在风里飞扬<br />
+一半洒落阴凉<br />
+一半沐浴阳光<br />
+非常沉默非常骄傲<br />
+从不依靠<br />
+从不寻找</div>
+<h3 id="定义列表definition-lists">定义列表/Definition lists</h3>
+<dl>
+<dt>Term 1</dt>
+<dd><p>Definition 1</p>
+</dd>
+<dt>Term 2 with <em>inline markup</em></dt>
+<dd><p>Definition 2</p>
+<p>{ some code, part of Definition 2 }</p>
+<p>Third paragraph of definition 2.</p>
+</dd>
+</dl>
+<h3 id="编号示例列表numbered-example-lists">编号示例列表/Numbered example lists</h3>
+<ol class="example" type="1">
+<li>My first example will be numbered (1).</li>
+<li>My second example will be numbered (2).</li>
+</ol>
+<p>Explanation of examples.</p>
+<ol start="3" class="example" type="1">
+<li>My third example will be numbered (3).</li>
+</ol>
+<p>As (3) illustrates, …</p>
+<h3 id="结束列表ending-a-list">结束列表/Ending a list</h3>
+<ol type="1">
+<li>one</li>
+<li>two</li>
+</ol>
+<!-- end of list -->
+<ol start="3" type="1">
+<li>three</li>
+</ol>
+<!-- -->
+<ol type="1">
+<li>uno</li>
+<li>dos</li>
+<li>tres</li>
+</ol>
+<h3 id="删除线strikeout">删除线/Strikeout</h3>
+<p>This <del>is deleted text.</del></p>
+<h3 id="上标和下标superscripts-and-subscripts">上标和下标/Superscripts and subscripts</h3>
+<p>H<sub>2</sub>O is a liquid. 2<sup>10</sup> is 1024.</p>
+<h3 id="行内代码属性inline-code-attribute">行内代码属性/Inline code attribute</h3>
+<p>This is haskell inline code <code class="sourceCode haskell"><span class="op">&lt;$&gt;</span></code> sample.</p>
+<h3 id="下划线underline">下划线/Underline</h3>
+<p>To underline text, use the underline class: <span class="underline">Underline</span></p>
+<h3 id="小型大写字母small-caps">小型大写字母/Small caps</h3>
+<p>To write small caps, use the smallcaps class: <span class="smallcaps">Small caps</span></p>
+<h3 id="高亮标记highlighting">高亮标记/Highlighting</h3>
+<p>To highlight text, use the mark class: <span class="mark">Mark</span></p>
+<h3 id="连接属性link-attribute">连接属性/Link attribute</h3>
+<figure>
+<img src="./Ciri.jpg" alt="图：希里" id="ciri" class="ciri" style="width:50.0%" /><figcaption>图：希里</figcaption>
+</figure>
+<h3 id="块div">块/Div</h3>
+<div id="special" class="sidebar">
+<p>Here is a paragraph.</p>
+<p>And another.</p>
+</div>
+<h3 id="行内嵌入部分bracketed-span">行内嵌入部分/bracketed span</h3>
+<p>A bracketed sequence of inlines, as one would use to begin a link, will be treated as a Span with attributes if it is followed immediately by attributes: <span class="class" data-key="val">This is <em>some text</em></span></p>
+<h3 id="脚注footnote">脚注/Footnote</h3>
+<p>Here is a footnote reference,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> and another.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 </article>
 </body>
 </html>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Here is the footnote.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Here’s one with multiple blocks.</p>
+<p>Subsequent paragraphs are indented to show that they belong to the previous footnote.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</section>

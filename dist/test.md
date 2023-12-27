@@ -79,9 +79,9 @@
 
 ### 引用区块中的引用区块
 
-> <p>话说天下大势，分久必合，合久必分。周末七国分争，并入于秦。及秦灭之后，楚、汉分争，又并入于汉。汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。推其致乱之由，殆始于桓、灵二帝。桓帝禁锢善类，崇信宦官。及桓帝崩，灵帝即位，大将军窦武、太傅陈蕃共相辅佐。时有宦官曹节等弄权，窦武、陈蕃谋诛之，机事不密，反为所害，中涓自此愈横。</p>
+> 话说天下大势，分久必合，合久必分。周末七国分争，并入于秦。及秦灭之后，楚、汉分争，又并入于汉。汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。推其致乱之由，殆始于桓、灵二帝。桓帝禁锢善类，崇信宦官。及桓帝崩，灵帝即位，大将军窦武、太傅陈蕃共相辅佐。时有宦官曹节等弄权，窦武、陈蕃谋诛之，机事不密，反为所害，中涓自此愈横。
 >
-> > <p>滚滚长江东逝水，浪花淘尽英雄。是非成败转头空。青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢。古今多少事，都付笑谈中。</p>
+> > 滚滚长江东逝水，浪花淘尽英雄。是非成败转头空。青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢。古今多少事，都付笑谈中。
 
 ## 预处理格式区块
 
@@ -313,6 +313,143 @@ Table: 国风是《诗经》中的前 160 篇，收各诸侯国民歌（“风�
 [draw.io]{.tag}
 [xmind]{.tag}
 :::
+
+## pandoc 支持的扩展 {#pandoc_ext .pandoc_ext .pandoc name="pandoc"}
+
+参考标题引用部分自动 ID[自定义标签]以及[指定 ID](#pandoc_ext)。
+
+### 不编号的标题 {.unnumbered .unlisted}
+
+### 代码区块/Code block
+
+```{.language-c .numberLines startFrom="150"}
+/* ifname:      like "eth0", "br0" and etc.
+ * cmd:         SIOCGIFADDR, SIOCGIFDSTADDR, SIOCGIFHWADDR
+ *              SIOCGIFNETMASK, SIOCGIFBRDADDR
+ */
+static struct ifreq *get_ifreq(char *ifname, unsigned int cmd)
+{
+        static struct ifreq ifr;
+        bzero(&ifr, sizeof(ifr));
+
+        int fd = socket(AF_INET, SOCK_RAW, IPPROTO_RAW);
+        if (fd < 0) {
+                printf("socket error!");
+        } else {
+                strncpy(ifr.ifr_name, ifname, IFNAMSIZ);
+                ioctl(fd, cmd, &ifr);
+                close(fd);
+        }
+
+        return &ifr;
+}
+```
+
+### 行块/Line blocks
+
+不会自动将多行合并成一行内容。
+
+| 如果有来生
+| 要做一棵树
+| 站成永恒
+| 没有悲欢的姿势
+| 一半在土里安详
+| 一半在风里飞扬
+| 一半洒落阴凉
+| 一半沐浴阳光
+| 非常沉默非常骄傲
+| 从不依靠
+| 从不寻找
+
+### 定义列表/Definition lists
+
+Term 1
+
+: Definition 1
+
+Term 2 with _inline markup_
+
+: Definition 2
+
+      { some code, part of Definition 2 }
+
+    Third paragraph of definition 2.
+
+### 编号示例列表/Numbered example lists
+
+(@) My first example will be numbered (1).
+(@) My second example will be numbered (2).
+
+Explanation of examples.
+
+(@good) My third example will be numbered (3).
+
+As (@good) illustrates, ...
+
+### 结束列表/Ending a list
+
+1.  one
+2.  two
+
+<!-- end of list -->
+
+3.  three
+
+<!-- -->
+
+1.  uno
+2.  dos
+3.  tres
+
+### 删除线/Strikeout
+
+This ~~is deleted text.~~
+
+### 上标和下标/Superscripts and subscripts
+
+H~2~O is a liquid. 2^10^ is 1024.
+
+### 行内代码属性/Inline code attribute
+
+This is haskell inline code `<$>`{.haskell} sample.
+
+### 下划线/Underline
+
+To underline text, use the underline class: [Underline]{.underline}
+
+### 小型大写字母/Small caps
+
+To write small caps, use the smallcaps class: [Small caps]{.smallcaps}
+
+### 高亮标记/Highlighting
+
+To highlight text, use the mark class: [Mark]{.mark}
+
+### 连接属性/Link attribute
+
+![图：希里](./Ciri.jpg){#ciri .ciri width=50%}
+
+### 块/Div
+
+::::: {#special .sidebar}
+Here is a paragraph.
+
+And another.
+:::::
+
+### 行内嵌入部分/bracketed span
+
+A bracketed sequence of inlines, as one would use to begin a link, will be treated as a Span with attributes if it is followed immediately by attributes: [This is *some text*]{.class key="val"}
+
+### 脚注/Footnote
+
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[^1]: Here is the footnote.
+[^longnote]: Here's one with multiple blocks.
+
+    Subsequent paragraphs are indented to show that they
+    belong to the previous footnote.
 
 </article></body>
 </html>
