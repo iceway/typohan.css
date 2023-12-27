@@ -572,6 +572,23 @@ div.document-tag span.tag:nth-child(6n+6) {
   background-color: #ab9df2;
   border-color: #5033e4;
 }
+/* pandoc 生成的脚注样式 */
+a.footnote-ref sup::before {
+  content: "[";
+}
+a.footnote-ref sup::after {
+  content: "]";
+}
+section.footnotes p {
+  line-height: 1em;
+  margin: 0.5em 0;
+}
+section.footnotes ol li {
+  margin: 0.5em 0;
+}
+section.footnotes ol li::marker {
+  content: "[" counter(list-item) "].  ";
+}
 /* 独立封面 */
 #cover {
   color: #282828;
