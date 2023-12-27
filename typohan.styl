@@ -518,6 +518,24 @@ div.document-tag
       border-color: darken($color-violet, 30%)
 
 
+/* pandoc 生成的脚注样式 */
+a.footnote-ref
+  sup
+    &::before
+      content: "["
+    &::after
+      content: "]"
+
+section.footnotes
+  p
+    line-height: 1em
+    margin: 0.5em 0
+  ol
+    li
+      margin: 0.5em 0
+      &::marker
+        content: "[" counter(list-item) "].  "
+
 
 /* 独立封面 */
 #cover
