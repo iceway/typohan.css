@@ -75,9 +75,6 @@ html
   font: $font-size/1.3em $font-main
   moz-webkit(font-size-adjust, 100%)
 
-body
-  margin: 2em auto 4em auto
-  max-width: 1024px
 
 /* 标题 */
 h1, h2, h3, h4, h5, h6
@@ -557,17 +554,27 @@ section.footnotes
 
 
 
+/* 控制打印时的每个页面样式 */
 @page
-  margin: 2cm
   size: A4 portrait
-  counter-increment: page
+  counter-increment: page;
+
+@page cover
+  margin: 0
+
+@page toc
+  margin: 2cm 1.6cm
+
+@page content
+  margin: 2cm 1.6cm
+  /* 页面页眉左上 */
   @top-left
     content: string(heading)
     font-size: 12px
     height: 1cm
     vertical-align: middle
     width: 100%
-
+  /* 页面页眉中间 */
   @top-center
     content: ''
     display: block
@@ -576,44 +583,65 @@ section.footnotes
     width: 100%
     margin-bottom: 5px
     border-bottom: 1px solid $color-softdark
-
+  /* 页面页眉右侧 */
   @top-right
     content: counter(page)
-    font-size: 10px
+    font-size: 12px
     height: 1cm
-    text-align: right
+    vertical-align: middle
     width: 100%
+    text-align: right
 
-
-@page blank
-  @top-left
-    background: none
-    content: none
-  @top-center
-    content: none
-  @top-right
-    content: none
-
+/* 打印页面（纸张或PDF）特殊样式 */
 @media print
   html
+    /* 移除页面背景色设置，便于黑白打印（淡灰色背景色会被打印成点状网） */
     background-color: white
-  #cover
+    body
+      margin: 0 auto
+      /* 如果不指定高度，prism.js的代码块前的行号 '{.line-numbers}' 在 white-space 设置
+        为 pre-wrap 时会显示错乱（这个问题在chrome中没有，只在 wkhtmltopdf 使用 webkit
+        时才遇到，详见：https://github.com/wkhtmltopdf/wkhtmltopdf/issues/4939)
+      */
+      /* 宽度比A4默认尺寸210mm多10mm，适配wkhtmltopdf的页面margin设置。*/
+      width: 220mm
+      height: 297mm
+
+  article#cover
+    page: cover
     page-break-after: always
-    page: blank
+    margin: 6cm 0 2cm 0
+    padding: 2cm
+    background-color: $color-softlight
     div.title
-      margin: 6cm 0 2cm 0
+      margin: 1em 0
     div.meta
-      margin: 2cm 0 1cm 0
-  #toc
+      margin: 1em 0
+
+  article#toc
+    page: toc
     page-break-after: always
-    page: blank
     ul li a
+      display: block
+      border-bottom: 1px dotted $color-softdark;
+      content: ""
+      &::before
+        content: target-text(attr(href))
       &::after
         content: target-counter(attr(href), page)
         float: right
-  #content
+
+  article#content
+    /* page: content */
     h1
       /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
        这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
        */
       page-break-before: always
+
+/* 屏幕显示特殊样式 */
+@media screen
+  html
+    body
+      margin: 2em auto 4em auto
+      width: 220mm
