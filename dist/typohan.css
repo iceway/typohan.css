@@ -19,44 +19,57 @@ html {
   -webkit-font-size-adjust: 100%;
   font-size-adjust: 100%;
 }
+body {
+  width: 220mm;
+  margin: 2em auto 4em auto;
+}
 /* 标题 */
-h1,
-h2,
-h3,
-h4,
-h5,
+h1 {
+  color: #333;
+  line-height: 1.35em;
+  margin: 1.5em 0 0.5em 0;
+  font-weight: bold;
+  font-size: 1.5em;
+  string-set: heading content();
+}
+h2 {
+  color: #333;
+  line-height: 1.35em;
+  margin: 1.5em 0 0.5em 0;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+h3 {
+  color: #333;
+  line-height: 1.35em;
+  margin: 1.5em 0 0.5em 0;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+h4 {
+  color: #333;
+  line-height: 1.35em;
+  margin: 1.5em 0 0.5em 0;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+h5 {
+  color: #333;
+  line-height: 1.35em;
+  margin: 1.5em 0 0.5em 0;
+  font-weight: bold;
+  font-size: 1.1em;
+}
 h6 {
   color: #333;
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
-}
-h1 {
-  font-size: 1.5em;
-  string-set: heading content();
-}
-h2 {
-  font-size: 1.4em;
-}
-h3 {
-  font-size: 1.3em;
-}
-h4 {
-  font-size: 1.2em;
-}
-h5 {
-  font-size: 1.1em;
-}
-h6 {
   font-size: 1em;
 }
 /* 段落 */
 p {
   margin: 1em 0;
-/* 中文段落第一行应该缩进2个字的宽度，但是现在大多的网站都没有这个缩进。
-     而且考虑到可能用户全英文的页面，这里取消段落第一行的缩进。
-  */
-/*text-indent: 2em*/
   line-height: 1.6em;
 }
 p.poem-like {
@@ -75,6 +88,7 @@ ol li {
 ul p,
 ol p {
   text-indent: 0;
+  margin: 0.5em 0;
 }
 ul blockquote,
 ol blockquote {
@@ -111,7 +125,6 @@ img {
   max-width: 98%;
   display: block;
   margin: 1em auto;
-/*box-shadow: 5px 5px 5px $color-softdark*/
 }
 figure {
   margin: 1em 0 2em 0;
@@ -132,7 +145,6 @@ textarea {
 table {
   width: 100%;
   border-collapse: collapse;
-/* page-break-inside: avoid */
   font: normal 0.9em/1em "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   border: 2px solid #5c5c5c;
   display: table;
@@ -354,69 +366,97 @@ kbd {
   content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".";
 }
 /* 自定义 div 和 span 样式，参考 vuepress */
-div.tip,
-div.warning,
-div.danger,
+div.tip {
+  display: block;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: #e2f4e9;
+  border-color: #42b983;
+  color: #285941;
+}
+div.warning {
+  display: block;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: rgba(255,229,100,0.3);
+  border-color: #e7c000;
+  color: #6b5900;
+}
+div.danger {
+  display: block;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: #ffe6e6;
+  border-color: #c00;
+  color: #4d0000;
+}
 div.info {
   display: block;
   padding: 0.1rem 1.5rem;
   border-left-width: 0.5rem;
   border-left-style: solid;
   margin: 1rem 0;
-}
-div.tip {
-  background-color: #e2f4e9;
-  border-color: #42b983;
-  color: #285941;
-}
-div.warning {
-  background-color: rgba(255,229,100,0.3);
-  border-color: #e7c000;
-  color: #6b5900;
-}
-div.danger {
-  background-color: #ffe6e6;
-  border-color: #c00;
-  color: #4d0000;
-}
-div.info {
   background-color: #e7f3fe;
   border-color: #2196f3;
   color: #234972;
 }
-div.red,
-div.orange,
-div.yellow,
-div.green,
-div.blue,
+div.red {
+  display: block;
+  border: 1px solid;
+  padding: 0.1rem 1.5rem;
+  margin: 1rem 5px;
+  color: #000;
+  background-color: #ff6188;
+  border-color: #f6003d;
+}
+div.orange {
+  display: block;
+  border: 1px solid;
+  padding: 0.1rem 1.5rem;
+  margin: 1rem 5px;
+  color: #000;
+  background-color: #fc9867;
+  border-color: #f45305;
+}
+div.yellow {
+  display: block;
+  border: 1px solid;
+  padding: 0.1rem 1.5rem;
+  margin: 1rem 5px;
+  color: #000;
+  background-color: #ffd866;
+  border-color: #faba00;
+}
+div.green {
+  display: block;
+  border: 1px solid;
+  padding: 0.1rem 1.5rem;
+  margin: 1rem 5px;
+  color: #000;
+  background-color: #a9dc76;
+  border-color: #76bc30;
+}
+div.blue {
+  display: block;
+  border: 1px solid;
+  padding: 0.1rem 1.5rem;
+  margin: 1rem 5px;
+  color: #000;
+  background-color: #78dce8;
+  border-color: #24c0d3;
+}
 div.violet {
   display: block;
   border: 1px solid;
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
   color: #000;
-}
-div.red {
-  background-color: #ff6188;
-  border-color: #f6003d;
-}
-div.orange {
-  background-color: #fc9867;
-  border-color: #f45305;
-}
-div.yellow {
-  background-color: #ffd866;
-  border-color: #faba00;
-}
-div.green {
-  background-color: #a9dc76;
-  border-color: #76bc30;
-}
-div.blue {
-  background-color: #78dce8;
-  border-color: #24c0d3;
-}
-div.violet {
   background-color: #ab9df2;
   border-color: #5033e4;
 }
@@ -471,66 +511,81 @@ span.mark {
   background-color: #ff0;
   color: #000;
 }
-span.tip,
-span.warning,
-span.danger,
-span.info {
+span.tip {
   margin: 0 0.1em;
   padding: 0 0.1em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-}
-span.tip {
   background-color: #e2f4e9;
   border-color: #42b983;
   color: #285941;
 }
 span.warning {
+  margin: 0 0.1em;
+  padding: 0 0.1em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
   background-color: rgba(255,229,100,0.3);
   border-color: #e7c000;
   color: #6b5900;
 }
 span.danger {
+  margin: 0 0.1em;
+  padding: 0 0.1em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
   background-color: #ffe6e6;
   border-color: #c00;
   color: #4d0000;
 }
 span.info {
+  margin: 0 0.1em;
+  padding: 0 0.1em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
   background-color: #e7f3fe;
   border-color: #2196f3;
   color: #234972;
 }
-span.red,
-span.orange,
-span.yellow,
-span.green,
-span.blue,
-span.violet {
+span.red {
   margin: 0 0.1em;
   padding: 0;
   color: #333;
-}
-span.red {
   background-color: #ff6188;
   border-color: #f6003d;
 }
 span.orange {
+  margin: 0 0.1em;
+  padding: 0;
+  color: #333;
   background-color: #fc9867;
   border-color: #f45305;
 }
 span.yellow {
+  margin: 0 0.1em;
+  padding: 0;
+  color: #333;
   background-color: #ffd866;
   border-color: #faba00;
 }
 span.green {
+  margin: 0 0.1em;
+  padding: 0;
+  color: #333;
   background-color: #a9dc76;
   border-color: #76bc30;
 }
 span.blue {
+  margin: 0 0.1em;
+  padding: 0;
+  color: #333;
   background-color: #78dce8;
   border-color: #24c0d3;
 }
 span.violet {
+  margin: 0 0.1em;
+  padding: 0;
+  color: #333;
   background-color: #ab9df2;
   border-color: #5033e4;
 }
@@ -619,9 +674,6 @@ section.footnotes ol li::marker {
 }
 @page content {
   margin: 2cm 1.6cm;
-/* 页面页眉左上 */
-/* 页面页眉中间 */
-/* 页面页眉右侧 */
   @top-left {
     content: string(heading);
     font-size: 12px;
@@ -630,7 +682,7 @@ section.footnotes ol li::marker {
     width: 100%;
   }
   @top-center {
-    content: '';
+    content: "";
     display: block;
     height: 0.05cm;
     opacity: 0.5;
@@ -654,14 +706,13 @@ section.footnotes ol li::marker {
     background-color: #fff;
   }
   html body {
-    margin: 0 auto;
 /* 如果不指定高度，prism.js的代码块前的行号 '{.line-numbers}' 在 white-space 设置
         为 pre-wrap 时会显示错乱（这个问题在chrome中没有，只在 wkhtmltopdf 使用 webkit
         时才遇到，详见：https://github.com/wkhtmltopdf/wkhtmltopdf/issues/4939)
       */
-/* 宽度比A4默认尺寸210mm多10mm，适配wkhtmltopdf的页面margin设置。*/
     width: 220mm;
     height: 297mm;
+    margin: 0 auto;
   }
   article#cover {
     page: cover;
@@ -694,15 +745,8 @@ section.footnotes ol li::marker {
   }
   article#content h1 {
 /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
-       这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
-       */
+      这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
+      */
     page-break-before: always;
-  }
-}
-/* 屏幕显示特殊样式 */
-@media screen {
-  html body {
-    margin: 2em auto 4em auto;
-    width: 220mm;
   }
 }
