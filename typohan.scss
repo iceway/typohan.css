@@ -25,6 +25,16 @@ $font-main: $font-heiti, sans-serif;
 $font-serif: $font-kaiti, $font-songti, serif;
 $font-mono: $font-dengkuan, monospace;
 
+// sass/scss、less的darken和lighten函数，与stylus的效果不同，详见：
+//    https://github.com/sass/sass/issues/598
+@function lighten($color, $amount) {
+  @return scale-color($color, $lightness: $amount);
+}
+
+@function darken($color, $amount) {
+  @return scale-color($color, $lightness: -$amount);
+}
+
 $color-light: #f8f8f8;
 $color-softlight: #f0f0f0;
 $color-dark: #333333;
@@ -89,30 +99,17 @@ body {
   font-size: $size;
 }
 
-h1 {
-  @include heading_css(1.5em);
-  // string-set: heading content(); /* for weasyprint */
+@each $header,
+  $size in (h1: 1.5em, h2: 1.4em, h3: 1.3em, h4: 1.2em, h5: 1.1em, h6: 1em)
+{
+  #{$header} {
+    @include heading_css($size);
+  }
 }
 
-h2 {
-  @include heading_css(1.4em);
-}
-
-h3 {
-  @include heading_css(1.3em);
-}
-
-h4 {
-  @include heading_css(1.2em);
-}
-
-h5 {
-  @include heading_css(1.1em);
-}
-
-h6 {
-  @include heading_css(1em);
-}
+// h1 {
+//   string-set: heading content(); /* for weasyprint */
+// }
 
 /* 段落 */
 p {
@@ -214,14 +211,14 @@ table {
   tr,
   th,
   td {
-    border: 1px solid lighten($color-softdark, 40%);
+    border: 1px solid lighten($color-fg, 50%);
     padding: 0.5em 1em;
     text-align: left;
   }
 
   th {
     font-weight: bold;
-    background-color: lighten($color-softdark, 50%);
+    background-color: lighten($color-softdark, 80%);
   }
 
   caption {
@@ -237,7 +234,7 @@ blockquote {
   font: normal #{1em/1.5em} $font-serif;
   color: lighten($color-fg, 10%);
   background: $color-softlight;
-  border-left: 8px solid gainsboro;
+  border-left: 8px solid #dcdcdc;
   position: relative;
   margin: 1em 0;
   padding: 0.2em 1em;
