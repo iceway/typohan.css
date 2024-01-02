@@ -44,110 +44,134 @@ $color-green = #a9dc76;
 $color-blue = #78dce8;
 $color-violet = #ab9df2;
 
-moz-webkit(x, args...)
+moz-webkit(x, args...) {
   -moz-{x}: args;
   -webkit-{x}: args;
   {x}: args;
+}
 
-*
+* {
   margin: 0;
   padding: 0;
+}
 
 /* 定义全局颜色和字体；防止浏览器默认的字符缩放 */
-html
+html {
   color: $color-fg;
   background-color: $color-bg;
   font: $font-size / 1.3em $font-main;
   moz-webkit(font-size-adjust, 100%);
+}
 
-body
+body {
   width: 220mm;
   margin: 2em auto 4em auto;
+}
 
 /* 标题 */
-heading_css(size)
+heading_css(size) {
   color: $color-dark;
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
   font-size: size;
+}
 
-h1
+h1 {
   heading_css(1.5em);
   string-set: heading content();
+}
 
-h2
+h2 {
   heading_css(1.4em);
+}
 
-h3
+h3 {
   heading_css(1.3em);
+}
 
-h4
+h4 {
   heading_css(1.2em);
+}
 
-h5
+h5 {
   heading_css(1.1em);
+}
 
-h6
+h6 {
   heading_css(1em);
+}
 
 /* 段落 */
-p
+p {
   margin: 1em 0;
   line-height: 1.6em;
 
-  &.poem-like
+  &.poem-like {
     text-indent: 0;
     margin-left: 2em;
+  }
+}
 
 /* 列表 */
-ul, ol
+ul, ol {
   // -webkit-margin-before: 0
   // -webkit-margin-after: 0
   // -webkit-padding-start: 0
   padding-left: 2em;
 
-  li
+  li {
     margin: 0.5em 0;
+  }
 
-  p
+  p {
     text-indent: 0;
     margin: 0.5em 0;
+  }
 
-  blockquote
+  blockquote {
     margin-left: 0;
     margin-right: 0;
+  }
 
-  &.none-list
+  &.none-list {
     list-style: none;
+  }
+}
 
 /* HTML5标签默认显示为块 */
-article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
   display: block;
+}
 
 /* 多媒体标签和img类似，显示为行内块 */
-audio, canvas, progress, video
+audio, canvas, progress, video {
   display: inline-block;
+}
 
-img
+img {
   max-width: 98%;
   display: block;
   margin: 1em auto;
+}
 
-figure
+figure {
   margin: 1em 0 2em 0;
+}
 
-figcaption
+figcaption {
   font-style: italic;
   text-align: center;
   margin: 1em 0;
+}
 
 /* 表单元素默认不会继承父级元素font，单独设置font */
-button, input, select, textarea
+button, input, select, textarea {
   font: normal 1em / 1.5em $font-main;
+}
 
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
-table
+table {
   width: 100%;
   border-collapse: collapse;
   // page-break-inside: avoid;
@@ -157,23 +181,27 @@ table
   margin: auto;
   line-height: normal;
 
-  tr, th, td
+  tr, th, td {
     border: 1px solid lighten($color-fg, 50%);
     padding: 0.5em 1em;
     text-align: left;
+  }
 
-  th
+  th {
     font-weight: bold;
     background-color: lighten($color-softdark, 80%);
+  }
 
-  caption
+  caption {
     text-align: center;
     font-style: italic;
     font-size: 1rem;
     margin: 1em 0;
+  }
+}
 
 /* 块及段落引用 */
-blockquote
+blockquote {
   font: normal 1em / 1.5em $font-serif;
   color: lighten($color-fg, 10%);
   background: $color-softlight;
@@ -181,59 +209,71 @@ blockquote
   position: relative;
   margin: 1em 0;
   padding: 0.2em 1em;
+}
 
 /* 不推荐在中文环境使用<i>标签强调某些内容，中文没有斜体字，而英文手写本来就是斜体字。 */
-i
+i {
   font-style: italic;
+}
 
-strong, b
+strong, b {
   font-weight: bold;
   color: inherit;
+}
 
 /* 属性添加鼠标问号 */
-abbr
+abbr {
   cursor: help;
   border-bottom: 1px dotted;
+}
 
 /* 删除样式 */
-del
+del {
   text-decoration: line-through;
+}
 
 /* 上下标 */
-sub, sup
+sub, sup {
   font-size: x-small;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
+}
 
-sub
+sub {
   bottom: -0.25em;
+}
 
-sup
+sup {
   top: -0.5em;
+}
 
-small
+small {
   font-size: smaller;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
+}
 
 /* 链接颜色 */
-a
+a {
   color: $color-link;
   background-color: transparent;
   text-decoration: none;
   border-bottom: 1px dashed $color-link;
 
-  &:hover
+  &:hover {
     border-bottom-color: lighten($color-link, 50%);
+  }
+}
 
 /* 地址，变量等使用等宽字体 */
-address, cite, dfn, var
+address, cite, dfn, var {
   font: normal 0.9em / 1em $font-mono;
+}
 
 /* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highlight.js或者prism.js */
-pre
+pre {
   background: $color-softlight;
   margin: 1em 0;
   padding: 1em;
@@ -242,40 +282,48 @@ pre
   word-wrap: normal;
   white-space: pre;
 
-  & > code
+  & > code {
     font-family: $font-mono;
     background: none;
     margin: 0;
     padding: 0;
+  }
 
-  :not(&) > code
+  :not(&) > code {
     font-family: $font-mono;
     background: $color-softlight;
     margin: 0 0.2em;
     padding: 0.1em 0.3em;
     border-radius: 5px;
+  }
+}
 
-hr
+hr {
   border: none;
   border-bottom: 1px solid lighten($color-fg, 30%);
   margin-bottom: 1em;
   height: 10px;
+}
 
 /* 引用符号 */
-q
+q {
   quotes: "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019";
 
-  &:lang(zh)
+  &:lang(zh) {
     quotes: "\300c" "\300d" "\300e" "\300f" "\300c" "\300d" "\300e" "\300f" "\300c" "\300d" "\300e" "\300f";
+  }
 
-  &:before
+  &:before {
     content: open-quote;
+  }
 
-  &:after
+  &:after {
     content: close-quote;
+  }
+}
 
 /* 键盘按键, https://github.com/auth0/kbd/blob/gh-pages/kbd.css */
-kbd
+kbd {
   background-color: $color-softlight;
   font-family: $font-mono;
   display: inline-block;
@@ -288,79 +336,100 @@ kbd
   cursor: pointer;
   font-weight: bold;
   letter-spacing: 1px;
+}
 
 /* ===特定类样式=== */
 /* 传统中文样式：段落首行缩进，强调使用字体底部加着重号的方式等。 */
-.cn-style
-  p
+.cn-style {
+  p {
     text-indent: 2em;
 
-    &.poem-like
+    &.poem-like {
       text-indent: 0;
       margin-left: 2em;
+    }
+  }
 
   /* 中文环境：强调下面加点，而不是使用斜体 */
-  em
+  em {
     moz-webkit(text-emphasis, filled circle);
     moz-webkit(text-emphasis-position, under);
     font-style: inherit;
     border-bottom-style: dotted;
     border-bottom-width: calc(0px);
     padding-bottom: calc(0px);
+  }
+}
 
 /* 标题前面自动加章节号 */
-.counter
-  h1, h2, h3, h4, h5, h6
-    &:before
+.counter {
+  h1, h2, h3, h4, h5, h6 {
+    &:before {
       display: inline-block;
       margin-right: 0.5em;
+    }
+  }
 
-  body
+  body {
     counter-reset: h1counter;
+  }
 
-  h1
+  h1 {
     counter-reset: h2counter;
     counter-increment: h1counter;
 
-    &:before
+    &:before {
       content: counter(h1counter) ".";
+    }
+  }
 
-  h2
+  h2 {
     counter-reset: h3counter;
     counter-increment: h2counter;
 
-    &:before
+    &:before {
       content: counter(h1counter) "." counter(h2counter) ".";
+    }
+  }
 
-  h3
+  h3 {
     counter-reset: h4counter;
     counter-increment: h3counter;
 
-    &:before
+    &:before {
       content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".";
+    }
+  }
 
-  h4
+  h4 {
     counter-reset: h5counter;
     counter-increment: h4counter;
 
-    &:before
+    &:before {
       content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".";
+    }
+  }
 
-  h5
+  h5 {
     counter-reset: h6counter;
     counter-increment: h5counter;
 
-    &:before
+    &:before {
       content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".";
+    }
+  }
 
-  h6
+  h6 {
     counter-increment: h6counter;
 
-    &:before
+    &:before {
       content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".";
+    }
+  }
+}
 
 /* 自定义 div 和 span 样式，参考 vuepress */
-custom_div_css(bgc, bdc, c)
+custom_div_css(bgc, bdc, c) {
   display: block;
   padding: 0.1rem 1.5rem;
   border-left-width: 0.5rem;
@@ -369,51 +438,65 @@ custom_div_css(bgc, bdc, c)
   background-color: bgc;
   border-color: bdc;
   color: c;
+}
 
-color_bg_bd_css(bgc)
+color_bg_bd_css(bgc) {
   background-color: bgc;
   border-color: darken(bgc, 30%);
+}
 
-color_div_css(bgc)
+color_div_css(bgc) {
   display: block;
   border: 1px solid;
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
   color: black;
   color_bg_bd_css(bgc);
+}
 
-div
-  &.tip
+div {
+  &.tip {
     custom_div_css($color-tip-bg, $color-tip-border, $color-tip);
+  }
 
-  &.warning
+  &.warning {
     custom_div_css($color-warning-bg, $color-warning-border, $color-warning);
+  }
 
-  &.danger
+  &.danger {
     custom_div_css($color-danger-bg, $color-danger-border, $color-danger);
+  }
 
-  &.info
+  &.info {
     custom_div_css($color-info-bg, $color-info-border, $color-info);
+  }
 
-  &.red
+  &.red {
     color_div_css($color-red);
+  }
 
-  &.orange
+  &.orange {
     color_div_css($color-orange);
+  }
 
-  &.yellow
+  &.yellow {
     color_div_css($color-yellow);
+  }
 
-  &.green
+  &.green {
     color_div_css($color-green);
+  }
 
-  &.blue
+  &.blue {
     color_div_css($color-blue);
+  }
 
-  &.violet
+  &.violet {
     color_div_css($color-violet);
+  }
+}
 
-div.output
+div.output {
   background-color: $color-bg;
   display: block;
   border: 3px solid $color-softlight;
@@ -422,7 +505,7 @@ div.output
   margin: 1rem 0;
   padding: 0 15px;
 
-  &::before
+  &::before {
     display: block;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
@@ -435,8 +518,10 @@ div.output
     content: "● ● ●";
     margin-left: -15px;
     margin-right: -15px;
+  }
+}
 
-div.faq
+div.faq {
   display: block;
   border-left: solid 3px #FFA1A1;
   margin: 16px;
@@ -444,7 +529,7 @@ div.faq
   position: relative;
   background-color: rgba(255, 161, 161, 0.2);
 
-  &::before
+  &::before {
     display: block;
     border: solid 3px #FFA1A1;
     border-radius: 3px;
@@ -459,8 +544,10 @@ div.faq
     position: absolute;
     left: -17px;
     top: 10px;
+  }
+}
 
-custom_span_css(bgc, bdc, c)
+custom_span_css(bgc, bdc, c) {
   margin: 0 0.1em;
   padding: 0 0.1em;
   border-bottom-width: 1px;
@@ -468,52 +555,67 @@ custom_span_css(bgc, bdc, c)
   background-color: bgc;
   border-color: bdc;
   color: c;
+}
 
-color_span_css(c)
+color_span_css(c) {
   margin: 0 0.1em;
   padding: 0;
   color: $color-dark;
   color_bg_bd_css(c);
+}
 
-span
-  &.mark
+span {
+  &.mark {
     background-color: yellow;
     color: black;
+  }
+}
 
-span
-  &.tip
+span {
+  &.tip {
     custom_span_css($color-tip-bg, $color-tip-border, $color-tip);
+  }
 
-  &.warning
+  &.warning {
     custom_span_css($color-warning-bg, $color-warning-border, $color-warning);
+  }
 
-  &.danger
+  &.danger {
     custom_span_css($color-danger-bg, $color-danger-border, $color-danger);
+  }
 
-  &.info
+  &.info {
     custom_span_css($color-info-bg, $color-info-border, $color-info);
+  }
 
-  &.red
+  &.red {
     color_span_css($color-red);
+  }
 
-  &.orange
+  &.orange {
     color_span_css($color-orange);
+  }
 
-  &.yellow
+  &.yellow {
     color_span_css($color-yellow);
+  }
 
-  &.green
+  &.green {
     color_span_css($color-green);
+  }
 
-  &.blue
+  &.blue {
     color_span_css($color-blue);
+  }
 
-  &.violet
+  &.violet {
     color_span_css($color-violet);
+  }
+}
 
 /* 标签样式，monokai配色。 */
-div.document-tag
-  span.tag
+div.document-tag {
+  span.tag {
     display: inline-block;
     border: 2px solid;
     border-radius: 1em;
@@ -522,91 +624,119 @@ div.document-tag
     text-indent: 0;
     color: $color-dark;
 
-    &:nth-child(6n+1)
+    &:nth-child(6n+1) {
       color_bg_bd_css($color-red);
+    }
 
-    &:nth-child(6n+2)
+    &:nth-child(6n+2) {
       color_bg_bd_css($color-orange);
+    }
 
-    &:nth-child(6n+3)
+    &:nth-child(6n+3) {
       color_bg_bd_css($color-yellow);
+    }
 
-    &:nth-child(6n+4)
+    &:nth-child(6n+4) {
       color_bg_bd_css($color-green);
+    }
 
-    &:nth-child(6n+5)
+    &:nth-child(6n+5) {
       color_bg_bd_css($color-blue);
+    }
 
-    &:nth-child(6n+6)
+    &:nth-child(6n+6) {
       color_bg_bd_css($color-violet);
+    }
+  }
+}
 
 /* pandoc 生成的脚注样式 */
-a.footnote-ref
-  sup
-    &::before
+a.footnote-ref {
+  sup {
+    &::before {
       content: "[";
+    }
 
-    &::after
+    &::after {
       content: "]";
+    }
+  }
+}
 
-section.footnotes
-  p
+section.footnotes {
+  p {
     line-height: 1em;
     margin: 0.5em 0;
+  }
 
-  ol
-    li
+  ol {
+    li {
       margin: 0.5em 0;
 
-      &::marker
+      &::marker {
         content: "[" counter(list-item) "].  ";
+      }
+    }
+  }
+}
 
 /* 独立封面 */
-#cover
+#cover {
   color: $color-harddark;
   font-weight: bold;
 
-  p
+  p {
     text-align: center;
 
-    &.title
+    &.title {
       font-size: 160%;
+    }
 
-    &.subtitle
+    &.subtitle {
       font-size: 120%;
+    }
+  }
+}
 
 /* 目录样式 */
-#toc
-  ul
+#toc {
+  ul {
     list-style: none;
 
-    li a
+    li a {
       border: 0;
+    }
+  }
+}
 
 /* 控制打印时的每个页面样式 */
-@page
+@page {
   size: A4 portrait;
   counter-increment: page;
+}
 
-@page cover
+@page cover {
   margin: 0;
+}
 
-@page toc
+@page toc {
   margin: 2cm 1.6cm;
+}
 
-@page content
+@page content {
   margin: 2cm 1.6cm;
 
   // 页面页眉左上
-  @top-left
+  @top-left {
     content: string(heading);
     font-size: 12px;
     height: 1cm;
     vertical-align: middle;
     width: 100%;
+  }
 
   // 页面页眉中间
-  @top-center
+  @top-center {
     content: "";
     display: block;
     height: 0.05cm;
@@ -614,23 +744,26 @@ section.footnotes
     width: 100%;
     margin-bottom: 5px;
     border-bottom: 1px solid $color-softdark;
+  }
 
   // 页面页眉右侧
-  @top-right
+  @top-right {
     content: counter(page);
     font-size: 12px;
     height: 1cm;
     vertical-align: middle;
     width: 100%;
     text-align: right;
+  }
+}
 
 /* 打印页面（纸张或PDF）特殊样式 */
-@media print
-  html
+@media print {
+  html {
     /* 移除页面背景色设置，便于黑白打印（淡灰色背景色会被打印成点状网） */
     background-color: white;
 
-    body
+    body {
       /* 如果不指定高度，prism.js的代码块前的行号 '{.line-numbers}' 在 white-space 设置
         为 pre-wrap 时会显示错乱（这个问题在chrome中没有，只在 wkhtmltopdf 使用 webkit
         时才遇到，详见：https://github.com/wkhtmltopdf/wkhtmltopdf/issues/4939)
@@ -638,39 +771,51 @@ section.footnotes
       width: 220mm;
       height: 297mm;
       margin: 0 auto;
+    }
+  }
 
-  article#cover
+  article#cover {
     page: cover;
     page-break-after: always;
     margin: 6cm 0 2cm 0;
     padding: 2cm;
     background-color: $color-softlight;
 
-    div.title
+    div.title {
       margin: 1em 0;
+    }
 
-    div.meta
+    div.meta {
       margin: 1em 0;
+    }
+  }
 
-  article#toc
+  article#toc {
     page: toc;
     page-break-after: always;
 
-    ul li a
+    ul li a {
       display: block;
       border-bottom: 1px dotted $color-softdark;
       content: "";
 
-      &::before
+      &::before {
         content: target-text(attr(href));
+      }
 
-      &::after
+      &::after {
         content: target-counter(attr(href), page);
         float: right;
+      }
+    }
+  }
 
-  article#content
-    h1
+  article#content {
+    h1 {
       /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
       这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
       */
       page-break-before: always;
+    }
+  }
+}
