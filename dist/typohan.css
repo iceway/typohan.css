@@ -1,15 +1,18 @@
-/* typohan.css | MIT License | github.com/iceway/typohan.css */
-/* 字体选择, 参考：
-	https://segmentfault.com/a/1190000006110417
-	https://zenozeng.github.io/fonts.css/
-  中文字体中宋体可能更像英文意义上的衬线体，这里用楷体只是觉得显示效果更好。
+@charset "UTF-8";
+/*! typohan.css | MIT License | github.com/iceway/typohan.css */
+/*
+字体选择, 参考：
+   https://segmentfault.com/a/1190000006110417
+   https://zenozeng.github.io/fonts.css/
+中文字体中宋体可能更像英文意义上的衬线体，这里用楷体只是觉得显示效果更好。
+
+使用到的色彩，参考：vuepress 和 monokai pro
 */
-/* 配色：参考 vuepress */
-/* 配色：参考 monokai pro */
 * {
   margin: 0;
   padding: 0;
 }
+
 /* 定义全局颜色和字体；防止浏览器默认的字符缩放 */
 html {
   color: #5c5c5c;
@@ -19,54 +22,61 @@ html {
   -webkit-font-size-adjust: 100%;
   font-size-adjust: 100%;
 }
+
 body {
   width: 220mm;
   margin: 2em auto 4em auto;
 }
+
 /* 标题 */
 h1 {
-  color: #333;
+  color: #333333;
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
   font-size: 1.5em;
-  string-set: heading content();
 }
+
 h2 {
-  color: #333;
+  color: #333333;
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
   font-size: 1.4em;
 }
+
 h3 {
-  color: #333;
+  color: #333333;
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
   font-size: 1.3em;
 }
+
 h4 {
-  color: #333;
+  color: #333333;
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
   font-size: 1.2em;
 }
+
 h5 {
-  color: #333;
+  color: #333333;
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
   font-size: 1.1em;
 }
+
 h6 {
-  color: #333;
+  color: #333333;
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
   font-size: 1em;
 }
+
 /* 段落 */
 p {
   margin: 1em 0;
@@ -76,6 +86,7 @@ p.poem-like {
   text-indent: 0;
   margin-left: 2em;
 }
+
 /* 列表 */
 ul,
 ol {
@@ -99,6 +110,7 @@ ul.none-list,
 ol.none-list {
   list-style: none;
 }
+
 /* HTML5标签默认显示为块 */
 article,
 aside,
@@ -114,6 +126,7 @@ section,
 summary {
   display: block;
 }
+
 /* 多媒体标签和img类似，显示为行内块 */
 audio,
 canvas,
@@ -121,19 +134,23 @@ progress,
 video {
   display: inline-block;
 }
+
 img {
   max-width: 98%;
   display: block;
   margin: 1em auto;
 }
+
 figure {
   margin: 1em 0 2em 0;
 }
+
 figcaption {
   font-style: italic;
   text-align: center;
   margin: 1em 0;
 }
+
 /* 表单元素默认不会继承父级元素font，单独设置font */
 button,
 input,
@@ -141,6 +158,7 @@ select,
 textarea {
   font: normal 1em/1.5em "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
+
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
 table {
   width: 100%;
@@ -154,7 +172,7 @@ table {
 table tr,
 table th,
 table td {
-  border: 1px solid #adadad;
+  border: 1px solid #aeaeae;
   padding: 0.5em 1em;
   text-align: left;
 }
@@ -168,6 +186,7 @@ table caption {
   font-size: 1rem;
   margin: 1em 0;
 }
+
 /* 块及段落引用 */
 blockquote {
   font: normal 1em/1.5em "LXGW WenKai", "霞鹜文楷", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
@@ -178,24 +197,29 @@ blockquote {
   margin: 1em 0;
   padding: 0.2em 1em;
 }
+
 /* 不推荐在中文环境使用<i>标签强调某些内容，中文没有斜体字，而英文手写本来就是斜体字。 */
 i {
   font-style: italic;
 }
+
 strong,
 b {
   font-weight: bold;
   color: inherit;
 }
+
 /* 属性添加鼠标问号 */
 abbr {
   cursor: help;
   border-bottom: 1px dotted;
 }
+
 /* 删除样式 */
 del {
   text-decoration: line-through;
 }
+
 /* 上下标 */
 sub,
 sup {
@@ -204,19 +228,23 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
+
 sub {
   bottom: -0.25em;
 }
+
 sup {
   top: -0.5em;
 }
+
 small {
   font-size: smaller;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
-/* 链接颜色 */
+
+/* 链接样式 */
 a {
   color: #478fb1;
   background-color: transparent;
@@ -226,6 +254,7 @@ a {
 a:hover {
   border-bottom-color: #a2c8d9;
 }
+
 /* 地址，变量等使用等宽字体 */
 address,
 cite,
@@ -233,6 +262,7 @@ dfn,
 var {
   font: normal 0.9em/1em "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
 }
+
 /* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highlight.js或者prism.js */
 pre {
   background: #f0f0f0;
@@ -256,18 +286,20 @@ pre > code {
   padding: 0.1em 0.3em;
   border-radius: 5px;
 }
+
 hr {
   border: none;
   border-bottom: 1px solid #8d8d8d;
   margin-bottom: 1em;
   height: 10px;
 }
+
 /* 引用符号 */
 q {
-  quotes: "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019";
+  quotes: "“" "”" "‘" "’" "“" "”" "‘" "’" "“" "”" "‘" "’";
 }
 q:lang(zh) {
-  quotes: "\300c" "\300d" "\300e" "\300f" "\300c" "\300d" "\300e" "\300f" "\300c" "\300d" "\300e" "\300f";
+  quotes: "「" "」" "『" "』" "「" "」" "『" "』" "「" "」" "『" "』";
 }
 q:before {
   content: open-quote;
@@ -275,6 +307,7 @@ q:before {
 q:after {
   content: close-quote;
 }
+
 /* 键盘按键, https://github.com/auth0/kbd/blob/gh-pages/kbd.css */
 kbd {
   background-color: #f0f0f0;
@@ -290,8 +323,10 @@ kbd {
   font-weight: bold;
   letter-spacing: 1px;
 }
-/* ===特定类样式=== */
-/* 传统中文样式：段落首行缩进，强调使用字体底部加着重号的方式等。 */
+
+/* ===特定类样式===
+  传统中文样式：段落首行缩进，强调使用字体底部加着重号的方式等。
+*/
 .cn-style p {
   text-indent: 2em;
 }
@@ -308,9 +343,10 @@ kbd {
   text-emphasis-position: under;
   font-style: inherit;
   border-bottom-style: dotted;
-  border-bottom-width: calc(0px);
-  padding-bottom: calc(0px);
+  border-bottom-width: 0px;
+  padding-bottom: 0px;
 }
+
 /* 标题前面自动加章节号 */
 .counter h1:before,
 .counter h2:before,
@@ -365,7 +401,8 @@ kbd {
 .counter h6:before {
   content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".";
 }
-/* 自定义 div 和 span 样式，参考 vuepress */
+
+/* 自定义 div 和 span 样式，参考 vuepress，配色还参考了 monokai pro */
 div.tip {
   display: block;
   padding: 0.1rem 1.5rem;
@@ -382,7 +419,7 @@ div.warning {
   border-left-width: 0.5rem;
   border-left-style: solid;
   margin: 1rem 0;
-  background-color: rgba(255,229,100,0.3);
+  background-color: rgba(255, 229, 100, 0.3);
   border-color: #e7c000;
   color: #6b5900;
 }
@@ -411,7 +448,7 @@ div.red {
   border: 1px solid;
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
-  color: #000;
+  color: black;
   background-color: #ff6188;
   border-color: #f6003d;
 }
@@ -420,7 +457,7 @@ div.orange {
   border: 1px solid;
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
-  color: #000;
+  color: black;
   background-color: #fc9867;
   border-color: #f45305;
 }
@@ -429,7 +466,7 @@ div.yellow {
   border: 1px solid;
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
-  color: #000;
+  color: black;
   background-color: #ffd866;
   border-color: #faba00;
 }
@@ -438,7 +475,7 @@ div.green {
   border: 1px solid;
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
-  color: #000;
+  color: black;
   background-color: #a9dc76;
   border-color: #76bc30;
 }
@@ -447,7 +484,7 @@ div.blue {
   border: 1px solid;
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
-  color: #000;
+  color: black;
   background-color: #78dce8;
   border-color: #24c0d3;
 }
@@ -456,10 +493,12 @@ div.violet {
   border: 1px solid;
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
-  color: #000;
+  color: black;
   background-color: #ab9df2;
   border-color: #5033e4;
 }
+
+/* 输出块样式 */
 div.output {
   background-color: #f8f8f8;
   display: block;
@@ -483,13 +522,15 @@ div.output::before {
   margin-left: -15px;
   margin-right: -15px;
 }
+
+/* FAQ 块样式 */
 div.faq {
   display: block;
   border-left: solid 3px #ffa1a1;
   margin: 16px;
   padding: 3px 1em 3px 1.5em;
   position: relative;
-  background-color: rgba(255,161,161,0.2);
+  background-color: rgba(255, 161, 161, 0.2);
 }
 div.faq::before {
   display: block;
@@ -507,10 +548,12 @@ div.faq::before {
   left: -17px;
   top: 10px;
 }
+
 span.mark {
-  background-color: #ff0;
-  color: #000;
+  background-color: yellow;
+  color: black;
 }
+
 span.tip {
   margin: 0 0.1em;
   padding: 0 0.1em;
@@ -525,7 +568,7 @@ span.warning {
   padding: 0 0.1em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  background-color: rgba(255,229,100,0.3);
+  background-color: rgba(255, 229, 100, 0.3);
   border-color: #e7c000;
   color: #6b5900;
 }
@@ -550,45 +593,46 @@ span.info {
 span.red {
   margin: 0 0.1em;
   padding: 0;
-  color: #333;
+  color: #333333;
   background-color: #ff6188;
   border-color: #f6003d;
 }
 span.orange {
   margin: 0 0.1em;
   padding: 0;
-  color: #333;
+  color: #333333;
   background-color: #fc9867;
   border-color: #f45305;
 }
 span.yellow {
   margin: 0 0.1em;
   padding: 0;
-  color: #333;
+  color: #333333;
   background-color: #ffd866;
   border-color: #faba00;
 }
 span.green {
   margin: 0 0.1em;
   padding: 0;
-  color: #333;
+  color: #333333;
   background-color: #a9dc76;
   border-color: #76bc30;
 }
 span.blue {
   margin: 0 0.1em;
   padding: 0;
-  color: #333;
+  color: #333333;
   background-color: #78dce8;
   border-color: #24c0d3;
 }
 span.violet {
   margin: 0 0.1em;
   padding: 0;
-  color: #333;
+  color: #333333;
   background-color: #ab9df2;
   border-color: #5033e4;
 }
+
 /* 标签样式，monokai配色。 */
 div.document-tag span.tag {
   display: inline-block;
@@ -597,7 +641,7 @@ div.document-tag span.tag {
   padding: 0.1em 0.5em;
   margin: 0.2em 0.3em;
   text-indent: 0;
-  color: #333;
+  color: #333333;
 }
 div.document-tag span.tag:nth-child(6n+1) {
   background-color: #ff6188;
@@ -623,6 +667,7 @@ div.document-tag span.tag:nth-child(6n+6) {
   background-color: #ab9df2;
   border-color: #5033e4;
 }
+
 /* pandoc 生成的脚注样式 */
 a.footnote-ref sup::before {
   content: "[";
@@ -630,6 +675,7 @@ a.footnote-ref sup::before {
 a.footnote-ref sup::after {
   content: "]";
 }
+
 section.footnotes p {
   line-height: 1em;
   margin: 0.5em 0;
@@ -640,6 +686,7 @@ section.footnotes ol li {
 section.footnotes ol li::marker {
   content: "[" counter(list-item) "].  ";
 }
+
 /* 独立封面 */
 #cover {
   color: #282828;
@@ -654,6 +701,7 @@ section.footnotes ol li::marker {
 #cover p.subtitle {
   font-size: 120%;
 }
+
 /* 目录样式 */
 #toc ul {
   list-style: none;
@@ -661,6 +709,7 @@ section.footnotes ol li::marker {
 #toc ul li a {
   border: 0;
 }
+
 /* 控制打印时的每个页面样式 */
 @page {
   size: A4 portrait;
@@ -674,6 +723,7 @@ section.footnotes ol li::marker {
 }
 @page content {
   margin: 2cm 1.6cm;
+  /* 页面页眉左上 */
   @top-left {
     content: string(heading);
     font-size: 12px;
@@ -681,6 +731,7 @@ section.footnotes ol li::marker {
     vertical-align: middle;
     width: 100%;
   }
+  /* 页面页眉中间 */
   @top-center {
     content: "";
     display: block;
@@ -690,6 +741,7 @@ section.footnotes ol li::marker {
     margin-bottom: 5px;
     border-bottom: 1px solid #5c5c5c;
   }
+  /* 页面页眉右侧 */
   @top-right {
     content: counter(page);
     font-size: 12px;
@@ -702,14 +754,14 @@ section.footnotes ol li::marker {
 /* 打印页面（纸张或PDF）特殊样式 */
 @media print {
   html {
-/* 移除页面背景色设置，便于黑白打印（淡灰色背景色会被打印成点状网） */
-    background-color: #fff;
+    /* 移除页面背景色设置，便于黑白打印（淡灰色背景色会被打印成点状网） */
+    background-color: white;
   }
   html body {
-/* 如果不指定高度，prism.js的代码块前的行号 '{.line-numbers}' 在 white-space 设置
-        为 pre-wrap 时会显示错乱（这个问题在chrome中没有，只在 wkhtmltopdf 使用 webkit
-        时才遇到，详见：https://github.com/wkhtmltopdf/wkhtmltopdf/issues/4939)
-      */
+    /* 如果不指定高度，prism.js的代码块前的行号 '{.line-numbers}' 在 white-space 设置
+      为 pre-wrap 时会显示错乱（这个问题在chrome中没有，只在 wkhtmltopdf 使用 webkit
+      时才遇到，详见：https://github.com/wkhtmltopdf/wkhtmltopdf/issues/4939)
+    */
     width: 220mm;
     height: 297mm;
     margin: 0 auto;
@@ -744,9 +796,9 @@ section.footnotes ol li::marker {
     float: right;
   }
   article#content h1 {
-/* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
-      这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
-      */
+    /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
+    这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
+    */
     page-break-before: always;
   }
 }
