@@ -347,11 +347,11 @@ q {
     quotes: "「" "」" "『" "』" "「" "」" "『" "』" "「" "」" "『" "』";
   }
 
-  &:before {
+  &::before {
     content: open-quote;
   }
 
-  &:after {
+  &::after {
     content: close-quote;
   }
 }
@@ -404,7 +404,7 @@ kbd {
   h4,
   h5,
   h6 {
-    &:before {
+    &::before {
       display: inline-block;
       margin-right: 0.5em;
     }
@@ -418,7 +418,7 @@ kbd {
     counter-reset: h2counter;
     counter-increment: h1counter;
 
-    &:before {
+    &::before {
       content: counter(h1counter) ".";
     }
   }
@@ -427,7 +427,7 @@ kbd {
     counter-reset: h3counter;
     counter-increment: h2counter;
 
-    &:before {
+    &::before {
       content: counter(h1counter) "." counter(h2counter) ".";
     }
   }
@@ -436,7 +436,7 @@ kbd {
     counter-reset: h4counter;
     counter-increment: h3counter;
 
-    &:before {
+    &::before {
       content: counter(h1counter) "." counter(h2counter) "." counter(h3counter)
         ".";
     }
@@ -446,7 +446,7 @@ kbd {
     counter-reset: h5counter;
     counter-increment: h4counter;
 
-    &:before {
+    &::before {
       content: counter(h1counter) "." counter(h2counter) "." counter(h3counter)
         "." counter(h4counter) ".";
     }
@@ -456,7 +456,7 @@ kbd {
     counter-reset: h6counter;
     counter-increment: h5counter;
 
-    &:before {
+    &::before {
       content: counter(h1counter) "." counter(h2counter) "." counter(h3counter)
         "." counter(h4counter) "." counter(h5counter) ".";
     }
@@ -465,7 +465,7 @@ kbd {
   h6 {
     counter-increment: h6counter;
 
-    &:before {
+    &::before {
       content: counter(h1counter) "." counter(h2counter) "." counter(h3counter)
         "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".";
     }
@@ -729,6 +729,7 @@ section.footnotes {
   p {
     line-height: 1em;
     margin: 0.5em 0;
+    font-family: $font-serif;
   }
 
   ol {
