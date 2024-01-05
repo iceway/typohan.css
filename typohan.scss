@@ -35,36 +35,37 @@ $font-mono: $font-dengkuan, monospace;
   @return scale-color($color, $lightness: -$amount);
 }
 
-$color-light: #f8f8f8;
-$color-softlight: #f0f0f0;
-$color-dark: #333333;
-$color-softdark: #5c5c5c;
-$color-harddark: #282828;
+$color-light: hsl(0, 0%, 96%);
+$color-softlight: hsl(0, 0%, 90%);
+$color-hardlight: hsl(0, 0%, 86%);
+$color-dark: hsl(0, 0%, 20%);
+$color-softdark: hsl(0, 0%, 26%);
+$color-harddark: hsl(0, 0%, 32%);
 $color-bg: $color-light;
 $color-fg: $color-softdark;
-$color-link: #478fb1;
+$color-link: hsl(199, 43%, 49%);
 
 // 特殊样式块配色：参考 vuepress
-$color-tip-bg: #e2f4e9;
-$color-tip-border: #42b983;
-$color-tip: #285941;
-$color-warning-bg: rgba(255, 229, 100, 0.3);
-$color-warning-border: #e7c000;
-$color-warning: #6b5900;
-$color-danger-bg: #ffe6e6;
-$color-danger-border: #c00;
-$color-danger: #4d0000;
-$color-info-bg: #e7f3fe;
-$color-info-border: #2196f3;
-$color-info: #234972;
+$color-tip-bg: hsl(143, 45%, 92%);
+$color-tip-border: hsl(153, 47%, 49%);
+$color-tip: hsl(151, 38%, 25%);
+$color-warning-bg: hsla(50, 100%, 70%, 0.3);
+$color-warning-border: hsl(50, 100%, 45%);
+$color-warning: hsl(50, 100%, 21%);
+$color-danger-bg: hsl(0, 100%, 95%);
+$color-danger-border: hsl(0, 100%, 40%);
+$color-danger: hsl(0, 100%, 15%);
+$color-info-bg: hsl(209, 92%, 95%);
+$color-info-border: hsl(207, 90%, 54%);
+$color-info: hsl(211, 53%, 29%);
 
 // 特殊样式块配色：参考 monokai pro
-$color-red: #ff6188;
-$color-orange: #fc9867;
-$color-yellow: #ffd866;
-$color-green: #a9dc76;
-$color-blue: #78dce8;
-$color-violet: #ab9df2;
+$color-red: hsl(345, 100%, 69%);
+$color-orange: hsl(20, 96%, 70%);
+$color-yellow: hsl(45, 100%, 70%);
+$color-green: hsl(90, 59%, 66%);
+$color-blue: hsl(186, 71%, 69%);
+$color-violet: hsl(250, 77%, 78%);
 
 @mixin moz-webkit($x, $args...) {
   -moz-#{$x}: $args;
@@ -234,7 +235,7 @@ blockquote {
   font: normal #{1em/1.5em} $font-serif;
   color: lighten($color-fg, 10%);
   background: $color-softlight;
-  border-left: 8px solid #dcdcdc;
+  border-left: 8px solid $color-hardlight;
   position: relative;
   margin: 1em 0;
   padding: 0.2em 1em;
@@ -363,7 +364,7 @@ kbd {
   display: inline-block;
   border-radius: 3px;
   padding: 0px 4px;
-  box-shadow: 1px 1px 1px #777;
+  box-shadow: 1px 1px 1px $color-harddark;
   margin: 2px;
   font-size: small;
   vertical-align: text-bottom;
@@ -566,7 +567,7 @@ div.output {
     line-height: 30px;
     padding-left: 1em;
     background-color: $color-softlight;
-    color: #bbb;
+    color: hsl(0, 0%, 73%);
     font-size: small;
     content: "● ● ●";
     margin-left: -15px;
@@ -577,15 +578,15 @@ div.output {
 /* FAQ 块样式 */
 div.faq {
   display: block;
-  border-left: solid 3px #ffa1a1;
+  border-left: solid 3px hsl(0, 100%, 82%);
   margin: 16px;
   padding: 3px 1em 3px 1.5em;
   position: relative;
-  background-color: rgba(255, 161, 161, 0.2);
+  background-color: hsla(0, 100%, 82%, 0.2);
 
   &::before {
     display: block;
-    border: solid 3px #ffa1a1;
+    border: solid 3px hsl(0, 100%, 82%);
     border-radius: 3px;
     width: 32px;
     height: 32px;
@@ -726,10 +727,10 @@ a.footnote-ref {
 }
 
 section.footnotes {
+  font-family: $font-songti;
   p {
     line-height: 1em;
     margin: 0.5em 0;
-    font-family: $font-serif;
   }
 
   ol {
