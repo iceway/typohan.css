@@ -1,10 +1,7 @@
 .PHONY: all
 
-all: styl
+all: scss
 	@echo "compile success..."
-
-styl: typohan.styl
-	stylus -o dist typohan.styl
 
 scss: typohan.scss
 	sass --no-source-map typohan.scss dist/typohan.css
