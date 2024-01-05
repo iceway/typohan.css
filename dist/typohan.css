@@ -15,8 +15,8 @@
 
 /* 定义全局颜色和字体；防止浏览器默认的字符缩放 */
 html {
-  color: #5c5c5c;
-  background-color: #f8f8f8;
+  color: hsl(0, 0%, 26%);
+  background-color: hsl(0, 0%, 96%);
   font: 17.6px/1.3em "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   -moz-font-size-adjust: 100%;
   -webkit-font-size-adjust: 100%;
@@ -30,7 +30,7 @@ body {
 
 /* 标题 */
 h1 {
-  color: #333333;
+  color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
@@ -38,7 +38,7 @@ h1 {
 }
 
 h2 {
-  color: #333333;
+  color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
@@ -46,7 +46,7 @@ h2 {
 }
 
 h3 {
-  color: #333333;
+  color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
@@ -54,7 +54,7 @@ h3 {
 }
 
 h4 {
-  color: #333333;
+  color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
@@ -62,7 +62,7 @@ h4 {
 }
 
 h5 {
-  color: #333333;
+  color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
@@ -70,7 +70,7 @@ h5 {
 }
 
 h6 {
-  color: #333333;
+  color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
   font-weight: bold;
@@ -164,7 +164,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   font: normal 0.9em/1em "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  border: 2px solid #5c5c5c;
+  border: 2px solid hsl(0, 0%, 26%);
   display: table;
   margin: auto;
   line-height: normal;
@@ -172,13 +172,13 @@ table {
 table tr,
 table th,
 table td {
-  border: 1px solid #aeaeae;
+  border: 1px solid #a1a1a1;
   padding: 0.5em 1em;
   text-align: left;
 }
 table th {
   font-weight: bold;
-  background-color: #dedede;
+  background-color: #d9d9d9;
 }
 table caption {
   text-align: center;
@@ -190,9 +190,9 @@ table caption {
 /* 块及段落引用 */
 blockquote {
   font: normal 1em/1.5em "LXGW WenKai", "霞鹜文楷", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
-  color: #6c6c6c;
-  background: #f0f0f0;
-  border-left: 8px solid #dcdcdc;
+  color: #555555;
+  background: hsl(0, 0%, 90%);
+  border-left: 8px solid hsl(0, 0%, 86%);
   position: relative;
   margin: 1em 0;
   padding: 0.2em 1em;
@@ -246,13 +246,13 @@ small {
 
 /* 链接样式 */
 a {
-  color: #478fb1;
+  color: hsl(199, 43%, 49%);
   background-color: transparent;
   text-decoration: none;
-  border-bottom: 1px dashed #478fb1;
+  border-bottom: 1px dashed hsl(199, 43%, 49%);
 }
 a:hover {
-  border-bottom-color: #a2c8d9;
+  border-bottom-color: #a2c8da;
 }
 
 /* 地址，变量等使用等宽字体 */
@@ -265,7 +265,7 @@ var {
 
 /* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highlight.js或者prism.js */
 pre {
-  background: #f0f0f0;
+  background: hsl(0, 0%, 90%);
   margin: 1em 0;
   padding: 1em;
   display: block;
@@ -281,7 +281,7 @@ pre > code {
 }
 :not(pre) > code {
   font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
-  background: #f0f0f0;
+  background: hsl(0, 0%, 90%);
   margin: 0 0.2em;
   padding: 0.1em 0.3em;
   border-radius: 5px;
@@ -289,7 +289,7 @@ pre > code {
 
 hr {
   border: none;
-  border-bottom: 1px solid #8d8d8d;
+  border-bottom: 1px solid #7b7b7b;
   margin-bottom: 1em;
   height: 10px;
 }
@@ -301,21 +301,21 @@ q {
 q:lang(zh) {
   quotes: "「" "」" "『" "』" "「" "」" "『" "』" "「" "」" "『" "』";
 }
-q:before {
+q::before {
   content: open-quote;
 }
-q:after {
+q::after {
   content: close-quote;
 }
 
 /* 键盘按键, https://github.com/auth0/kbd/blob/gh-pages/kbd.css */
 kbd {
-  background-color: #f0f0f0;
+  background-color: hsl(0, 0%, 90%);
   font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
   display: inline-block;
   border-radius: 3px;
   padding: 0px 4px;
-  box-shadow: 1px 1px 1px #777;
+  box-shadow: 1px 1px 1px hsl(0, 0%, 32%);
   margin: 2px;
   font-size: small;
   vertical-align: text-bottom;
@@ -348,12 +348,12 @@ kbd {
 }
 
 /* 标题前面自动加章节号 */
-.counter h1:before,
-.counter h2:before,
-.counter h3:before,
-.counter h4:before,
-.counter h5:before,
-.counter h6:before {
+.counter h1::before,
+.counter h2::before,
+.counter h3::before,
+.counter h4::before,
+.counter h5::before,
+.counter h6::before {
   display: inline-block;
   margin-right: 0.5em;
 }
@@ -364,41 +364,41 @@ kbd {
   counter-reset: h2counter;
   counter-increment: h1counter;
 }
-.counter h1:before {
+.counter h1::before {
   content: counter(h1counter) ".";
 }
 .counter h2 {
   counter-reset: h3counter;
   counter-increment: h2counter;
 }
-.counter h2:before {
+.counter h2::before {
   content: counter(h1counter) "." counter(h2counter) ".";
 }
 .counter h3 {
   counter-reset: h4counter;
   counter-increment: h3counter;
 }
-.counter h3:before {
+.counter h3::before {
   content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".";
 }
 .counter h4 {
   counter-reset: h5counter;
   counter-increment: h4counter;
 }
-.counter h4:before {
+.counter h4::before {
   content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".";
 }
 .counter h5 {
   counter-reset: h6counter;
   counter-increment: h5counter;
 }
-.counter h5:before {
+.counter h5::before {
   content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".";
 }
 .counter h6 {
   counter-increment: h6counter;
 }
-.counter h6:before {
+.counter h6::before {
   content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".";
 }
 
@@ -409,9 +409,9 @@ div.tip {
   border-left-width: 0.5rem;
   border-left-style: solid;
   margin: 1rem 0;
-  background-color: #e2f4e9;
-  border-color: #42b983;
-  color: #285941;
+  background-color: hsl(143, 45%, 92%);
+  border-color: hsl(153, 47%, 49%);
+  color: hsl(151, 38%, 25%);
 }
 div.warning {
   display: block;
@@ -419,9 +419,9 @@ div.warning {
   border-left-width: 0.5rem;
   border-left-style: solid;
   margin: 1rem 0;
-  background-color: rgba(255, 229, 100, 0.3);
-  border-color: #e7c000;
-  color: #6b5900;
+  background-color: hsla(50, 100%, 70%, 0.3);
+  border-color: hsl(50, 100%, 45%);
+  color: hsl(50, 100%, 21%);
 }
 div.danger {
   display: block;
@@ -429,9 +429,9 @@ div.danger {
   border-left-width: 0.5rem;
   border-left-style: solid;
   margin: 1rem 0;
-  background-color: #ffe6e6;
-  border-color: #c00;
-  color: #4d0000;
+  background-color: hsl(0, 100%, 95%);
+  border-color: hsl(0, 100%, 40%);
+  color: hsl(0, 100%, 15%);
 }
 div.info {
   display: block;
@@ -439,9 +439,9 @@ div.info {
   border-left-width: 0.5rem;
   border-left-style: solid;
   margin: 1rem 0;
-  background-color: #e7f3fe;
-  border-color: #2196f3;
-  color: #234972;
+  background-color: hsl(209, 92%, 95%);
+  border-color: hsl(207, 90%, 54%);
+  color: hsl(211, 53%, 29%);
 }
 div.red {
   display: block;
@@ -449,8 +449,8 @@ div.red {
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
   color: black;
-  background-color: #ff6188;
-  border-color: #f6003d;
+  background-color: hsl(345, 100%, 69%);
+  border-color: #f6003e;
 }
 div.orange {
   display: block;
@@ -458,8 +458,8 @@ div.orange {
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
   color: black;
-  background-color: #fc9867;
-  border-color: #f45305;
+  background-color: hsl(20, 96%, 70%);
+  border-color: #f55505;
 }
 div.yellow {
   display: block;
@@ -467,8 +467,8 @@ div.yellow {
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
   color: black;
-  background-color: #ffd866;
-  border-color: #faba00;
+  background-color: hsl(45, 100%, 70%);
+  border-color: #fabb00;
 }
 div.green {
   display: block;
@@ -476,8 +476,8 @@ div.green {
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
   color: black;
-  background-color: #a9dc76;
-  border-color: #76bc30;
+  background-color: hsl(90, 59%, 66%);
+  border-color: #76bb30;
 }
 div.blue {
   display: block;
@@ -485,8 +485,8 @@ div.blue {
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
   color: black;
-  background-color: #78dce8;
-  border-color: #24c0d3;
+  background-color: hsl(186, 71%, 69%);
+  border-color: #24c1d3;
 }
 div.violet {
   display: block;
@@ -494,15 +494,15 @@ div.violet {
   padding: 0.1rem 1.5rem;
   margin: 1rem 5px;
   color: black;
-  background-color: #ab9df2;
-  border-color: #5033e4;
+  background-color: hsl(250, 77%, 78%);
+  border-color: #5032e4;
 }
 
 /* 输出块样式 */
 div.output {
-  background-color: #f8f8f8;
+  background-color: hsl(0, 0%, 96%);
   display: block;
-  border: 3px solid #f0f0f0;
+  border: 3px solid hsl(0, 0%, 90%);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   margin: 1rem 0;
@@ -515,8 +515,8 @@ div.output::before {
   height: 30px;
   line-height: 30px;
   padding-left: 1em;
-  background-color: #f0f0f0;
-  color: #bbb;
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 73%);
   font-size: small;
   content: "● ● ●";
   margin-left: -15px;
@@ -526,22 +526,22 @@ div.output::before {
 /* FAQ 块样式 */
 div.faq {
   display: block;
-  border-left: solid 3px #ffa1a1;
+  border-left: solid 3px hsl(0, 100%, 82%);
   margin: 16px;
   padding: 3px 1em 3px 1.5em;
   position: relative;
-  background-color: rgba(255, 161, 161, 0.2);
+  background-color: hsla(0, 100%, 82%, 0.2);
 }
 div.faq::before {
   display: block;
-  border: solid 3px #ffa1a1;
+  border: solid 3px hsl(0, 100%, 82%);
   border-radius: 3px;
   width: 32px;
   height: 32px;
   box-sizing: border-box;
   content: " ";
   background-image: url("data:image/png;base64,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");
-  background-color: #f0f0f0;
+  background-color: hsl(0, 0%, 90%);
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
@@ -559,78 +559,78 @@ span.tip {
   padding: 0 0.1em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  background-color: #e2f4e9;
-  border-color: #42b983;
-  color: #285941;
+  background-color: hsl(143, 45%, 92%);
+  border-color: hsl(153, 47%, 49%);
+  color: hsl(151, 38%, 25%);
 }
 span.warning {
   margin: 0 0.1em;
   padding: 0 0.1em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  background-color: rgba(255, 229, 100, 0.3);
-  border-color: #e7c000;
-  color: #6b5900;
+  background-color: hsla(50, 100%, 70%, 0.3);
+  border-color: hsl(50, 100%, 45%);
+  color: hsl(50, 100%, 21%);
 }
 span.danger {
   margin: 0 0.1em;
   padding: 0 0.1em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  background-color: #ffe6e6;
-  border-color: #c00;
-  color: #4d0000;
+  background-color: hsl(0, 100%, 95%);
+  border-color: hsl(0, 100%, 40%);
+  color: hsl(0, 100%, 15%);
 }
 span.info {
   margin: 0 0.1em;
   padding: 0 0.1em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  background-color: #e7f3fe;
-  border-color: #2196f3;
-  color: #234972;
+  background-color: hsl(209, 92%, 95%);
+  border-color: hsl(207, 90%, 54%);
+  color: hsl(211, 53%, 29%);
 }
 span.red {
   margin: 0 0.1em;
   padding: 0;
-  color: #333333;
-  background-color: #ff6188;
-  border-color: #f6003d;
+  color: hsl(0, 0%, 20%);
+  background-color: hsl(345, 100%, 69%);
+  border-color: #f6003e;
 }
 span.orange {
   margin: 0 0.1em;
   padding: 0;
-  color: #333333;
-  background-color: #fc9867;
-  border-color: #f45305;
+  color: hsl(0, 0%, 20%);
+  background-color: hsl(20, 96%, 70%);
+  border-color: #f55505;
 }
 span.yellow {
   margin: 0 0.1em;
   padding: 0;
-  color: #333333;
-  background-color: #ffd866;
-  border-color: #faba00;
+  color: hsl(0, 0%, 20%);
+  background-color: hsl(45, 100%, 70%);
+  border-color: #fabb00;
 }
 span.green {
   margin: 0 0.1em;
   padding: 0;
-  color: #333333;
-  background-color: #a9dc76;
-  border-color: #76bc30;
+  color: hsl(0, 0%, 20%);
+  background-color: hsl(90, 59%, 66%);
+  border-color: #76bb30;
 }
 span.blue {
   margin: 0 0.1em;
   padding: 0;
-  color: #333333;
-  background-color: #78dce8;
-  border-color: #24c0d3;
+  color: hsl(0, 0%, 20%);
+  background-color: hsl(186, 71%, 69%);
+  border-color: #24c1d3;
 }
 span.violet {
   margin: 0 0.1em;
   padding: 0;
-  color: #333333;
-  background-color: #ab9df2;
-  border-color: #5033e4;
+  color: hsl(0, 0%, 20%);
+  background-color: hsl(250, 77%, 78%);
+  border-color: #5032e4;
 }
 
 /* 标签样式，monokai配色。 */
@@ -641,31 +641,31 @@ div.document-tag span.tag {
   padding: 0.1em 0.5em;
   margin: 0.2em 0.3em;
   text-indent: 0;
-  color: #333333;
+  color: hsl(0, 0%, 20%);
 }
 div.document-tag span.tag:nth-child(6n+1) {
-  background-color: #ff6188;
-  border-color: #f6003d;
+  background-color: hsl(345, 100%, 69%);
+  border-color: #f6003e;
 }
 div.document-tag span.tag:nth-child(6n+2) {
-  background-color: #fc9867;
-  border-color: #f45305;
+  background-color: hsl(20, 96%, 70%);
+  border-color: #f55505;
 }
 div.document-tag span.tag:nth-child(6n+3) {
-  background-color: #ffd866;
-  border-color: #faba00;
+  background-color: hsl(45, 100%, 70%);
+  border-color: #fabb00;
 }
 div.document-tag span.tag:nth-child(6n+4) {
-  background-color: #a9dc76;
-  border-color: #76bc30;
+  background-color: hsl(90, 59%, 66%);
+  border-color: #76bb30;
 }
 div.document-tag span.tag:nth-child(6n+5) {
-  background-color: #78dce8;
-  border-color: #24c0d3;
+  background-color: hsl(186, 71%, 69%);
+  border-color: #24c1d3;
 }
 div.document-tag span.tag:nth-child(6n+6) {
-  background-color: #ab9df2;
-  border-color: #5033e4;
+  background-color: hsl(250, 77%, 78%);
+  border-color: #5032e4;
 }
 
 /* pandoc 生成的脚注样式 */
@@ -676,6 +676,9 @@ a.footnote-ref sup::after {
   content: "]";
 }
 
+section.footnotes {
+  font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW";
+}
 section.footnotes p {
   line-height: 1em;
   margin: 0.5em 0;
@@ -689,7 +692,7 @@ section.footnotes ol li::marker {
 
 /* 独立封面 */
 #cover {
-  color: #282828;
+  color: hsl(0, 0%, 32%);
   font-weight: bold;
 }
 #cover p {
@@ -739,7 +742,7 @@ section.footnotes ol li::marker {
     opacity: 0.5;
     width: 100%;
     margin-bottom: 5px;
-    border-bottom: 1px solid #5c5c5c;
+    border-bottom: 1px solid hsl(0, 0%, 26%);
   }
   /* 页面页眉右侧 */
   @top-right {
@@ -771,7 +774,7 @@ section.footnotes ol li::marker {
     page-break-after: always;
     margin: 6cm 0 2cm 0;
     padding: 2cm;
-    background-color: #f0f0f0;
+    background-color: hsl(0, 0%, 90%);
   }
   article#cover div.title {
     margin: 1em 0;
@@ -785,7 +788,7 @@ section.footnotes ol li::marker {
   }
   article#toc ul li a {
     display: block;
-    border-bottom: 1px dotted #5c5c5c;
+    border-bottom: 1px dotted hsl(0, 0%, 26%);
     content: "";
   }
   article#toc ul li a::before {
