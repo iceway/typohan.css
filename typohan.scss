@@ -21,8 +21,8 @@ $font-kaiti: $font-xiawu-kaiti, "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN",
   "AR PL UKai HK", "AR PL UKai TW";
 $font-dengkuan: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas,
   Inconsolata;
-$font-main: $font-heiti, sans-serif;
-$font-serif: $font-kaiti, $font-songti, serif;
+$font-main: $font-songti, serif;
+$font-sans: $font-heiti, sans-serif;
 $font-mono: $font-dengkuan, monospace;
 
 // sass/scss、less的darken和lighten函数，与stylus的效果不同，详见：
@@ -82,7 +82,7 @@ $color-violet: hsl(250, 77%, 78%);
 html {
   color: $color-fg;
   background-color: $color-bg;
-  font: #{17.6px/1.3em} $font-main;
+  font: #{17.6px/1.5em} $font-main;
   @include moz-webkit(font-size-adjust, 100%);
 }
 
@@ -96,6 +96,7 @@ body {
   color: $color-dark;
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
+  font-family: $font-sans;
   font-weight: bold;
   font-size: $size;
 }
@@ -188,6 +189,9 @@ figcaption {
   font-style: italic;
   text-align: center;
   margin: 1em 0;
+  &::before {
+    content: "Figure: ";
+  }
 }
 
 /* 表单元素默认不会继承父级元素font，单独设置font */
@@ -227,14 +231,17 @@ table {
     font-style: italic;
     font-size: 1rem;
     margin: 1em 0;
+    &::before {
+      content: "Table: ";
+    }
   }
 }
 
 /* 块及段落引用 */
 blockquote {
-  font: normal #{1em/1.5em} $font-serif;
+  line-height: 1.5em;
   color: lighten($color-fg, 10%);
-  background: $color-softlight;
+  background: $color-light;
   border-left: 8px solid $color-hardlight;
   position: relative;
   margin: 1em 0;
@@ -242,13 +249,15 @@ blockquote {
 }
 
 /* 不推荐在中文环境使用<i>标签强调某些内容，中文没有斜体字，而英文手写本来就是斜体字。 */
-i {
-  font-style: italic;
+i,
+em {
+  font-style: normal;
+  font-family: $font-kaiti;
 }
 
 strong,
 b {
-  font-weight: bold;
+  font-family: $font-sans;
   color: inherit;
 }
 
@@ -726,11 +735,15 @@ a.footnote-ref {
   }
 }
 
-section.footnotes {
-  font-family: $font-songti;
+.footnotes {
   p {
-    line-height: 1em;
+    line-height: 1.2em;
     margin: 0.5em 0;
+  }
+
+  hr {
+    margin-top: 3em;
+    margin-bottom: 1.5em;
   }
 
   ol {
@@ -748,6 +761,7 @@ section.footnotes {
 #cover {
   color: $color-harddark;
   font-weight: bold;
+  font-family: $font-sans;
 
   p {
     text-align: center;
@@ -768,6 +782,7 @@ section.footnotes {
     list-style: none;
 
     li a {
+      font-family: $font-sans;
       border: 0;
     }
   }
@@ -874,12 +889,12 @@ section.footnotes {
     }
   }
 
-  article#content {
-    h1 {
-      /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
-      这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
-      */
-      page-break-before: always;
-    }
-  }
+  // article#content {
+  //   h1 {
+  //     /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
+  //     这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
+  //     */
+  //     page-break-before: always;
+  //   }
+  // }
 }
