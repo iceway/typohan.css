@@ -17,7 +17,7 @@
 html {
   color: hsl(0, 0%, 26%);
   background-color: hsl(0, 0%, 96%);
-  font: 17.6px/1.3em "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font: 17.6px/1.5em "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
   -moz-font-size-adjust: 100%;
   -webkit-font-size-adjust: 100%;
   font-size-adjust: 100%;
@@ -33,6 +33,7 @@ h1 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: bold;
   font-size: 1.5em;
 }
@@ -41,6 +42,7 @@ h2 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: bold;
   font-size: 1.4em;
 }
@@ -49,6 +51,7 @@ h3 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: bold;
   font-size: 1.3em;
 }
@@ -57,6 +60,7 @@ h4 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: bold;
   font-size: 1.2em;
 }
@@ -65,6 +69,7 @@ h5 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: bold;
   font-size: 1.1em;
 }
@@ -73,6 +78,7 @@ h6 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: bold;
   font-size: 1em;
 }
@@ -150,20 +156,23 @@ figcaption {
   text-align: center;
   margin: 1em 0;
 }
+figcaption::before {
+  content: "Figure: ";
+}
 
 /* 表单元素默认不会继承父级元素font，单独设置font */
 button,
 input,
 select,
 textarea {
-  font: normal 1em/1.5em "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font: normal 1em/1.5em "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
 }
 
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
 table {
   width: 100%;
   border-collapse: collapse;
-  font: normal 0.9em/1em "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font: normal 0.9em/1em "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
   border: 2px solid hsl(0, 0%, 26%);
   display: table;
   margin: auto;
@@ -186,12 +195,15 @@ table caption {
   font-size: 1rem;
   margin: 1em 0;
 }
+table caption::before {
+  content: "Table: ";
+}
 
 /* 块及段落引用 */
 blockquote {
-  font: normal 1em/1.5em "LXGW WenKai", "霞鹜文楷", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
+  line-height: 1.5em;
   color: #555555;
-  background: hsl(0, 0%, 90%);
+  background: hsl(0, 0%, 96%);
   border-left: 8px solid hsl(0, 0%, 86%);
   position: relative;
   margin: 1em 0;
@@ -199,13 +211,15 @@ blockquote {
 }
 
 /* 不推荐在中文环境使用<i>标签强调某些内容，中文没有斜体字，而英文手写本来就是斜体字。 */
-i {
-  font-style: italic;
+i,
+em {
+  font-style: normal;
+  font-family: "LXGW WenKai", "霞鹜文楷", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW";
 }
 
 strong,
 b {
-  font-weight: bold;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   color: inherit;
 }
 
@@ -676,17 +690,18 @@ a.footnote-ref sup::after {
   content: "]";
 }
 
-section.footnotes {
-  font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW";
-}
-section.footnotes p {
-  line-height: 1em;
+.footnotes p {
+  line-height: 1.2em;
   margin: 0.5em 0;
 }
-section.footnotes ol li {
+.footnotes hr {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+}
+.footnotes ol li {
   margin: 0.5em 0;
 }
-section.footnotes ol li::marker {
+.footnotes ol li::marker {
   content: "[" counter(list-item) "].  ";
 }
 
@@ -694,6 +709,7 @@ section.footnotes ol li::marker {
 #cover {
   color: hsl(0, 0%, 32%);
   font-weight: bold;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 #cover p {
   text-align: center;
@@ -710,6 +726,7 @@ section.footnotes ol li::marker {
   list-style: none;
 }
 #toc ul li a {
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   border: 0;
 }
 
@@ -797,11 +814,5 @@ section.footnotes ol li::marker {
   article#toc ul li a::after {
     content: target-counter(attr(href), page);
     float: right;
-  }
-  article#content h1 {
-    /* 页面中h1可以认为是文章的顶层章节标题，所以在其位置之前强制翻页。
-    这里的效果在打印文档，或者打印成pdf时可以看到，在h1之前会翻页。
-    */
-    page-break-before: always;
   }
 }
