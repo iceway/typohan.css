@@ -178,17 +178,17 @@ video {
 img {
   max-width: 98%;
   display: block;
-  margin: 1em auto;
+  margin: 0.5em auto;
 }
 
 figure {
-  margin: 1em 0 2em 0;
+  margin: 2em auto 1em;
 }
 
 figcaption {
   font-style: italic;
   text-align: center;
-  margin: 1em 0;
+  margin: 0.5em 0;
   &::before {
     content: "Figure: ";
   }
@@ -210,7 +210,7 @@ table {
   font: normal #{0.9em/1em} $font-main;
   border: 2px solid $color-softdark;
   display: table;
-  margin: auto;
+  margin: 1em auto 2em;
   line-height: normal;
 
   tr,
@@ -230,7 +230,7 @@ table {
     text-align: center;
     font-style: italic;
     font-size: 1rem;
-    margin: 1em 0;
+    margin: 0.5em 0;
     &::before {
       content: "Table: ";
     }
