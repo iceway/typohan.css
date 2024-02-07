@@ -144,17 +144,17 @@ video {
 img {
   max-width: 98%;
   display: block;
-  margin: 1em auto;
+  margin: 0.5em auto;
 }
 
 figure {
-  margin: 1em 0 2em 0;
+  margin: 2em auto 1em;
 }
 
 figcaption {
   font-style: italic;
   text-align: center;
-  margin: 1em 0;
+  margin: 0.5em 0;
 }
 figcaption::before {
   content: "Figure: ";
@@ -175,7 +175,7 @@ table {
   font: normal 0.9em/1em "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
   border: 2px solid hsl(0, 0%, 26%);
   display: table;
-  margin: auto;
+  margin: 1em auto 2em;
   line-height: normal;
 }
 table tr,
@@ -193,7 +193,7 @@ table caption {
   text-align: center;
   font-style: italic;
   font-size: 1rem;
-  margin: 1em 0;
+  margin: 0.5em 0;
 }
 table caption::before {
   content: "Table: ";
