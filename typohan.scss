@@ -49,15 +49,18 @@ $color-link: hsl(199, 43%, 49%);
 $color-tip-bg: hsl(143, 45%, 92%);
 $color-tip-border: hsl(153, 47%, 49%);
 $color-tip: hsl(151, 38%, 25%);
-$color-warning-bg: hsla(50, 100%, 70%, 0.3);
-$color-warning-border: hsl(50, 100%, 45%);
-$color-warning: hsl(50, 100%, 21%);
-$color-danger-bg: hsl(0, 100%, 95%);
-$color-danger-border: hsl(0, 100%, 40%);
-$color-danger: hsl(0, 100%, 15%);
 $color-info-bg: hsl(209, 92%, 95%);
 $color-info-border: hsl(207, 90%, 54%);
 $color-info: hsl(211, 53%, 29%);
+$color-warning-bg: hsla(50, 100%, 70%, 0.3);
+$color-warning-border: hsl(50, 100%, 45%);
+$color-warning: hsl(50, 100%, 21%);
+$color-error-bg: hsl(341, 100%, 95%);
+$color-error-border: hsl(341, 100%, 56%);
+$color-error: hsl(341, 100%, 20%);
+$color-danger-bg: hsl(0, 100%, 95%);
+$color-danger-border: hsl(0, 100%, 40%);
+$color-danger: hsl(0, 100%, 15%);
 
 // 特殊样式块配色：参考 monokai pro
 $color-red: hsl(345, 100%, 69%);
@@ -513,6 +516,11 @@ div {
     @include custom_div_css($color-tip-bg, $color-tip-border, $color-tip);
   }
 
+  &.info,
+  &.note {
+    @include custom_div_css($color-info-bg, $color-info-border, $color-info);
+  }
+
   &.warning {
     @include custom_div_css(
       $color-warning-bg,
@@ -521,16 +529,18 @@ div {
     );
   }
 
-  &.danger {
+  &.error,
+  &.caution {
+    @include custom_div_css($color-error-bg, $color-error-border, $color-error);
+  }
+
+  &.danger,
+  &.important {
     @include custom_div_css(
       $color-danger-bg,
       $color-danger-border,
       $color-danger
     );
-  }
-
-  &.info {
-    @include custom_div_css($color-info-bg, $color-info-border, $color-info);
   }
 
   &.red {
@@ -640,6 +650,11 @@ span {
     @include custom_span_css($color-tip-bg, $color-tip-border, $color-tip);
   }
 
+  &.info,
+  &.note {
+    @include custom_span_css($color-info-bg, $color-info-border, $color-info);
+  }
+
   &.warning {
     @include custom_span_css(
       $color-warning-bg,
@@ -648,16 +663,22 @@ span {
     );
   }
 
-  &.danger {
+  &.error,
+  &.caution {
+    @include custom_span_css(
+      $color-error-bg,
+      $color-error-border,
+      $color-error
+    );
+  }
+
+  &.danger,
+  &.important {
     @include custom_span_css(
       $color-danger-bg,
       $color-danger-border,
       $color-danger
     );
-  }
-
-  &.info {
-    @include custom_span_css($color-info-bg, $color-info-border, $color-info);
   }
 
   &.red {
@@ -772,6 +793,16 @@ a.footnote-ref {
 
     &.subtitle {
       font-size: 120%;
+    }
+  }
+
+  div.abstract {
+    font-family: $font-main;
+    font-weight: normal;
+
+    div.abstract-title {
+      font-family: $font-sans;
+      font-weight: blod;
     }
   }
 }
