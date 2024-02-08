@@ -83,6 +83,10 @@ h6 {
   font-size: 1em;
 }
 
+span.header-section-number {
+  margin-right: 0.6em;
+}
+
 /* 段落 */
 p {
   margin: 1em 0;
