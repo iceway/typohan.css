@@ -116,6 +116,10 @@ body {
 //   string-set: heading content(); /* for weasyprint */
 // }
 
+span.header-section-number {
+  margin-right: 0.6em;
+}
+
 /* 段落 */
 p {
   margin: 1em 0;
