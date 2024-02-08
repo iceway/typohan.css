@@ -427,6 +427,16 @@ div.tip {
   border-color: hsl(153, 47%, 49%);
   color: hsl(151, 38%, 25%);
 }
+div.info, div.note {
+  display: block;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: hsl(209, 92%, 95%);
+  border-color: hsl(207, 90%, 54%);
+  color: hsl(211, 53%, 29%);
+}
 div.warning {
   display: block;
   padding: 0.1rem 1.5rem;
@@ -437,7 +447,17 @@ div.warning {
   border-color: hsl(50, 100%, 45%);
   color: hsl(50, 100%, 21%);
 }
-div.danger {
+div.error, div.caution {
+  display: block;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: hsl(341, 100%, 95%);
+  border-color: hsl(341, 100%, 56%);
+  color: hsl(341, 100%, 20%);
+}
+div.danger, div.important {
   display: block;
   padding: 0.1rem 1.5rem;
   border-left-width: 0.5rem;
@@ -446,16 +466,6 @@ div.danger {
   background-color: hsl(0, 100%, 95%);
   border-color: hsl(0, 100%, 40%);
   color: hsl(0, 100%, 15%);
-}
-div.info {
-  display: block;
-  padding: 0.1rem 1.5rem;
-  border-left-width: 0.5rem;
-  border-left-style: solid;
-  margin: 1rem 0;
-  background-color: hsl(209, 92%, 95%);
-  border-color: hsl(207, 90%, 54%);
-  color: hsl(211, 53%, 29%);
 }
 div.red {
   display: block;
@@ -577,6 +587,15 @@ span.tip {
   border-color: hsl(153, 47%, 49%);
   color: hsl(151, 38%, 25%);
 }
+span.info, span.note {
+  margin: 0 0.1em;
+  padding: 0 0.1em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  background-color: hsl(209, 92%, 95%);
+  border-color: hsl(207, 90%, 54%);
+  color: hsl(211, 53%, 29%);
+}
 span.warning {
   margin: 0 0.1em;
   padding: 0 0.1em;
@@ -586,7 +605,16 @@ span.warning {
   border-color: hsl(50, 100%, 45%);
   color: hsl(50, 100%, 21%);
 }
-span.danger {
+span.error, span.caution {
+  margin: 0 0.1em;
+  padding: 0 0.1em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  background-color: hsl(341, 100%, 95%);
+  border-color: hsl(341, 100%, 56%);
+  color: hsl(341, 100%, 20%);
+}
+span.danger, span.important {
   margin: 0 0.1em;
   padding: 0 0.1em;
   border-bottom-width: 1px;
@@ -594,15 +622,6 @@ span.danger {
   background-color: hsl(0, 100%, 95%);
   border-color: hsl(0, 100%, 40%);
   color: hsl(0, 100%, 15%);
-}
-span.info {
-  margin: 0 0.1em;
-  padding: 0 0.1em;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  background-color: hsl(209, 92%, 95%);
-  border-color: hsl(207, 90%, 54%);
-  color: hsl(211, 53%, 29%);
 }
 span.red {
   margin: 0 0.1em;
@@ -719,6 +738,14 @@ a.footnote-ref sup::after {
 }
 #cover p.subtitle {
   font-size: 120%;
+}
+#cover div.abstract {
+  font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
+  font-weight: normal;
+}
+#cover div.abstract div.abstract-title {
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-weight: blod;
 }
 
 /* 目录样式 */
