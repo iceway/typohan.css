@@ -17,7 +17,7 @@
 html {
   color: hsl(0, 0%, 26%);
   background-color: hsl(0, 0%, 96%);
-  font: 17.6px/1.5em "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
+  font: 17.6px/1.5em "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", SIMSUN, "AR PL UMing CN", serif;
   -moz-font-size-adjust: 100%;
   -webkit-font-size-adjust: 100%;
   font-size-adjust: 100%;
@@ -33,7 +33,7 @@ h1 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
-  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   font-size: 1.5em;
 }
@@ -42,7 +42,7 @@ h2 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
-  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   font-size: 1.4em;
 }
@@ -51,7 +51,7 @@ h3 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
-  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   font-size: 1.3em;
 }
@@ -60,7 +60,7 @@ h4 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
-  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   font-size: 1.2em;
 }
@@ -69,7 +69,7 @@ h5 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
-  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   font-size: 1.1em;
 }
@@ -78,7 +78,7 @@ h6 {
   color: hsl(0, 0%, 20%);
   line-height: 1.35em;
   margin: 1.5em 0 0.5em 0;
-  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   font-size: 1em;
 }
@@ -169,14 +169,14 @@ button,
 input,
 select,
 textarea {
-  font: normal 1em/1.5em "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
+  font: normal 1em/1.5em "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", SIMSUN, "AR PL UMing CN", serif;
 }
 
 /* 取消表格中单元格之间的间隔边距，并让相邻边重合 */
 table {
   width: 100%;
   border-collapse: collapse;
-  font: normal 0.9em/1em "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
+  font: normal 0.9em/1em "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", SIMSUN, "AR PL UMing CN", serif;
   border: 2px solid hsl(0, 0%, 26%);
   display: table;
   margin: 1em auto 2em;
@@ -218,12 +218,12 @@ blockquote {
 i,
 em {
   font-style: normal;
-  font-family: "LXGW WenKai", "霞鹜文楷", "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW";
+  font-family: "AR PL UKai CN", "LXGW WenKai", "霞鹜文楷", "Kaiti SC", SIMKAI, serif;
 }
 
 strong,
 b {
-  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Microsoft YaHei", sans-serif;
   color: inherit;
 }
 
@@ -278,7 +278,7 @@ address,
 cite,
 dfn,
 var {
-  font: normal 0.9em/1em "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  font: normal 0.9em/1em "Sarasa Mono SC", "等距更纱黑体 SC", Consolas, Inconsolata, monospace;
 }
 
 /* 代码片段, 代码高亮样式根据高亮使用的解析器决定，一般是highlight.js或者prism.js */
@@ -292,13 +292,13 @@ pre {
   white-space: pre;
 }
 pre > code {
-  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", Consolas, Inconsolata, monospace;
   background: none;
   margin: 0;
   padding: 0;
 }
 :not(pre) > code {
-  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", Consolas, Inconsolata, monospace;
   background: hsl(0, 0%, 90%);
   margin: 0 0.2em;
   padding: 0.1em 0.3em;
@@ -329,7 +329,7 @@ q::after {
 /* 键盘按键, https://github.com/auth0/kbd/blob/gh-pages/kbd.css */
 kbd {
   background-color: hsl(0, 0%, 90%);
-  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas, Inconsolata, monospace;
+  font-family: "Sarasa Mono SC", "等距更纱黑体 SC", Consolas, Inconsolata, monospace;
   display: inline-block;
   border-radius: 3px;
   padding: 0px 4px;
@@ -732,7 +732,7 @@ a.footnote-ref sup::after {
 #cover {
   color: hsl(0, 0%, 32%);
   font-weight: bold;
-  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 #cover p {
   text-align: center;
@@ -744,11 +744,11 @@ a.footnote-ref sup::after {
   font-size: 120%;
 }
 #cover div.abstract {
-  font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", STSong, "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", serif;
+  font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK", "Songti SC", SIMSUN, "AR PL UMing CN", serif;
   font-weight: normal;
 }
 #cover div.abstract div.abstract-title {
-  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: blod;
 }
 
@@ -757,7 +757,7 @@ a.footnote-ref sup::after {
   list-style: none;
 }
 #toc ul li a {
-  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK", "PingFang SC", "Microsoft YaHei", sans-serif;
   border: 0;
 }
 
@@ -836,7 +836,6 @@ a.footnote-ref sup::after {
   }
   article#toc ul li a {
     display: block;
-    border-bottom: 1px dotted hsl(0, 0%, 26%);
     content: "";
   }
   article#toc ul li a::before {
@@ -845,5 +844,13 @@ a.footnote-ref sup::after {
   article#toc ul li a::after {
     content: target-counter(attr(href), page);
     float: right;
+  }
+  figure figcaption {
+    /* 打印时避免在图片下和图片标题之间换页 */
+    page-break-before: avoid;
+  }
+  table caption {
+    /* 打印时避免在表格上和表格标题之间换页 */
+    page-break-after: avoid;
   }
 }
