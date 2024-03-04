@@ -8,21 +8,19 @@
 
 使用到的色彩，参考：vuepress 和 monokai pro
 */
-$font-siyuan-heiti: "Source Han Sans SC", "Source Han Sans CN",
-  "Noto Sans CJK SC", "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK";
-$font-siyuan-songti: "Source Han Serif SC", "Source Han Serif CN",
+$font-hei-siyuan: "Source Han Sans SC", "Source Han Sans CN", "Noto Sans CJK SC",
+  "Noto Sans CJK CN", "Source Han Sans", "Noto Sans CJK";
+$font-song-siyuan: "Source Han Serif SC", "Source Han Serif CN",
   "Noto Serif CJK SC", "Noto Serif CJK CN", "Source Han Serif", "Noto Serif CJK";
-$font-xiawu-kaiti: "LXGW WenKai", "霞鹜文楷";
-$font-heiti: $font-siyuan-heiti, "PingFang SC", "Hiragino Sans GB",
-  "Microsoft YaHei", "WenQuanYi Micro Hei";
-$font-songti: $font-siyuan-songti, "Songti SC", STSong, "AR PL UMing CN",
-  "AR PL UMing HK", "AR PL UMing TW";
-$font-kaiti: $font-xiawu-kaiti, "Kaiti SC", STkaiti, KaiTi, "AR PL UKai CN",
-  "AR PL UKai HK", "AR PL UKai TW";
-$font-dengkuan: "Sarasa Mono SC", "等距更纱黑体 SC", "Source Code Pro", Consolas,
-  Inconsolata;
+$font-kai-ukai: "AR PL UKai CN";
+$font-kai-xiawu: "LXGW WenKai", "霞鹜文楷";
+$font-heiti: $font-hei-siyuan, "PingFang SC", "Microsoft YaHei";
+$font-songti: $font-song-siyuan, "Songti SC", SIMSUN, "AR PL UMing CN";
+$font-kaiti: $font-kai-ukai, $font-kai-xiawu, "Kaiti SC", SIMKAI;
+$font-dengkuan: "Sarasa Mono SC", "等距更纱黑体 SC", Consolas, Inconsolata;
 $font-main: $font-songti, serif;
 $font-sans: $font-heiti, sans-serif;
+$font-italic: $font-kaiti, serif;
 $font-mono: $font-dengkuan, monospace;
 
 // sass/scss、less的darken和lighten函数，与stylus的效果不同，详见：
@@ -259,7 +257,7 @@ blockquote {
 i,
 em {
   font-style: normal;
-  font-family: $font-kaiti;
+  font-family: $font-italic;
 }
 
 strong,
@@ -910,7 +908,7 @@ a.footnote-ref {
 
     ul li a {
       display: block;
-      border-bottom: 1px dotted $color-softdark;
+      // border-bottom: 1px dotted $color-softdark;
       content: "";
 
       &::before {
@@ -922,6 +920,16 @@ a.footnote-ref {
         float: right;
       }
     }
+  }
+
+  figure figcaption {
+    /* 打印时避免在图片下和图片标题之间换页 */
+    page-break-before: avoid;
+  }
+
+  table caption {
+    /* 打印时避免在表格上和表格标题之间换页 */
+    page-break-after: avoid;
   }
 
   // article#content {
